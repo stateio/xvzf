@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+body, p {
+}
+
+#bg, #bg-nontrivial {
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+#bg-nontrivial {
+  background-image: url("/img/cylinder.png");
+}
+
+.btn.rsvp {
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px;
+}
+
+.btn.rsvp:hover {
+  background: rgba(25, 25, 25, .5);
+}
+
+#rsvp-footer .form-control {
+  background-color: transparent;
+  color: white;
+}
+
+#rsvp-footer, #rsvp-header {
+  display: table;
+  margin: 0 auto;
+}
+
+#rsvp-header {
+  text-align: center;
+  padding-top: 40px;
+}
+
+#rsvp-header h1, #rsvp-header h3 {
+  margin-top: 0;
+  color: white;
+}
+
+#rsvp-header h1 {
+  font-weight: normal;
+}
+
+#rsvp-header h3 {
+  font-size: 40px;
+  font-weight: 200;
+   text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+#rsvp-footer form #email {
+  width: 20em;
+}
+
+
+#rsvp-footer ::-webkit-input-placeholder { /* WebKit browsers */
+  text-align: center;
+  color:    white;
+}
+:#rsvp-footer -moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  text-align: center;
+  color:    white;
+}
+:#rsvp-footer :-moz-placeholder { /* Mozilla Firefox 19+ */
+  text-align: center;
+  color:    white;
+}
+:#rsvp-footer -ms-input-placeholder { /* Internet Explorer 10+ */
+  text-align: center;
+  color:    white;
+}
