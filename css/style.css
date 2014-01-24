@@ -50,12 +50,16 @@ body, p {
   margin: 0 auto;
 }
 
-#rsvp-header {
+#rsvp-header, #event-header {
   text-align: center;
   padding-top: 40px;
 }
 
-#rsvp-header h1, #rsvp-header h3 {
+#event-header {
+  padding-top: 0px;
+}
+
+#rsvp-header h1, #rsvp-header h3, #event-header h1, #event-header h3 {
   margin-top: 0;
   color: white;
 }
@@ -64,20 +68,63 @@ body, p {
   font-weight: normal;
 }
 
-#rsvp-header h3 {
-  font-size: 40px;
-  font-weight: 200;
-   text-shadow:
+#rsvp-header h3, #event-header h3 {
+  text-shadow:
    -1px -1px 0 #000,  
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
 }
 
+#rsvp-header h3 {
+  font-size: 40px;
+  font-weight: 200;
+}
+
 #rsvp-footer form #email {
   width: 20em;
 }
 
+#event-header h1 {
+  font-size: 90px;
+  text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  margin-bottom: 0px;
+}
+
+#cta {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+}
+
+#cta h3 {
+  font-size: 30px;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
+#cta #rsvp-footer input {
+  margin: 0 auto;
+}
+
+a, a:hover {
+  color: white;
+  text-transform: underline;
+}
+
+a:hover {
+  text-shadow: none;
+}
 
 #rsvp-footer ::-webkit-input-placeholder { /* WebKit browsers */
   text-align: center;
