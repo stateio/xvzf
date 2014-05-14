@@ -19,9 +19,16 @@ namespace :deploy do
   task :run_jekyll do
     run "cd #{current_path} && bundle exec jekyll build"
   end
+
+ desc "Linking application specific directories"
+  task :create_symlinks, :roles => :app do
+    run "ln -nfs #{shared_path}/ohhi/ #{release_path}/ohhi/"
+  end
+
 end
 
 after "deploy:restart", "deploy:run_jekyll"
+after "deploy:run_jekyll", "deploy:create_symlinks"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
