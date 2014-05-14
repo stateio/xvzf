@@ -37,7 +37,7 @@ a:hover {
   display: block;
 }
 
-#nontrivial header {
+#nontrivi6l header {
   text-align: center;
   padding-top: 40px;
   padding-top: 0px;
@@ -59,6 +59,55 @@ a:hover {
   bottom: 50px;
   position: absolute;
   text-align: center;
+}
+
+/* trololol */
+#theme {
+  background-image: url("/img/pbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+#theme header {
+  text-align: center;
+  padding-top: 40px;
+  padding-top: 0px;
+  margin-top: 0;
+}
+
+.theme h1, .theme h3, .theme h4 {
+  margin-top: 0;
+}
+
+
+#theme header h1 {
+  font-size: 90px;
+  margin-bottom: 0px;
+}
+
+#theme footer, #coc footer {
+  width: 100%;
+  bottom: 50px;
+  position: absolute;
+  text-align: center;
+}
+
+#theme footer {
+  bottom: 12%;
+}
+
+.theme #coc p {
+  font-size: 22px;
+}
+
+.theme #coc {
+  background-image: url("/img/pbg3.jpg");
 }
 
 #moreinfo #cta {
@@ -93,6 +142,22 @@ a:hover {
   height: 100%;
   position: relative;
   display: block;
+}
+
+.theme #moreinfo {
+  background-image: url("/img/pbg2.1.jpg");
+}
+
+.theme #moreinfo h3 {
+  z-index: 2;
+}
+
+.hl {
+  background-color: black;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #coc {
@@ -192,3 +257,4 @@ a:hover {
   text-align: center;
   color:    white;
 }
+
