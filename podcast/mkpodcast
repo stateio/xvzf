@@ -19,44 +19,13 @@ from mako import exceptions
 
 log = logging.getLogger()
 
-def seconds2duration(seconds):
-    return "%d:%02d" %(seconds / 60, seconds % 60)
-
-
-class MutogenItem(object):
-    def init(self):
-        try:
-            self.media = self.mutogen_type(self.file.name)
-        except self.mutogen_error as e:
-            self.error = str(e)
-
-    def media_attr(self, key):
-        if key not in self.media:
-            return None
-        val = self.media[key]
-        if isinstance(val, list) and len(val) > 0:
-            val = val[0]
-        return val
-
-    def mimetype(self):
-        return self.media.mime[0]
-
-    def length(self):
-        return self.media.info.length
-
-    def title(self):
-        return self.media_attr("title") or os.path.basename(self.file.name)
-
-    def author(self):
-        return self.media_attr("artist")
-
-    def subtitle(self):
-        return self.media_attr("album")
-
 
 class obj(object):
     def __init__(self, attrs):
         self.__dict__.update(attrs)
+
+def seconds2duration(seconds):
+    return "%d:%02d" %(seconds / 60, seconds % 60)
 
 def mp3_attr(mp3, key, attr="text"):
     if key not in mp3:
@@ -115,8 +84,7 @@ def main():
         }))
 
     context = {
-        "title": "xvzf",
-        "subtitle": "True Stories from Toronto Tech Workers",
+        "title": "xvzf: True Stories from Toronto Tech Workers",
         "link": "http://xvzf.io",
         "feed_url": feed_url,
         "image_url": "XXX get an image URL",
@@ -133,7 +101,6 @@ def main():
             obj({"name": u"Phill Mendonça-Vieira", "email": "phillmv@okayfail.com"}),
             obj({"name": "David Wolever", "email": "david@wolever.net"}),
         ],
-        "description_short": "XXX short description ",
         "description": """
             XXX FINISH DESCRIPTION
         """,
@@ -150,32 +117,6 @@ def main():
         print template.render(**context).encode("utf-8")
     except:
         print exceptions.text_error_template().render()
-
-
-    #fg.contributor(name=u"Phill Mendonça-Vieira", email="phillmv@okayfail.com")
-    #fg.contributor(name="David Wolever", email="david@wolever.net")
-
-    ## TODO: Icon and logo: 
-    #fg.icon("http://ex.com/icon.jpg")
-    #fg.logo("http://ex.com/logo.jpg")
-
-    #fg.rights("cc-by")
-    #fg.subtitle("This is a cool feed!")
-    #fg.link( href="http://larskiesow.de/test.atom", rel="self" )
-    #fg.language("de")
-    #fe = fg.add_entry()
-    #fe.id("http://lernfunk.de/_MEDIAID_123#1")
-    #fe.title("First Element")
-    #fe.content("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tamen
-    #                aberramus a proposito, et, ne longius, prorsus, inquam, Piso, si ista
-    #                mala sunt, placet. Aut etiam, ut vestitum, sic sententiam habeas aliam
-    #                domesticam, aliam forensem, ut in fronte ostentatio sit, intus veritas
-    #                occultetur? Cum id fugiunt, re eadem defendunt, quae Peripatetici,
-    #                verba.""")
-    #fe.summary("Lorem ipsum dolor sit amet, consectetur adipiscing elit...")
-    #fe.link( href="http://example.com", rel="alternate" )
-    #fe.author( name="Lars Kiesow", email="lkiesow@uos.de" )
-    #print fg.atom_str(pretty=True)
 
 if __name__ == "__main__":
     sys.exit(main())

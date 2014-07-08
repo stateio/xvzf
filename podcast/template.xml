@@ -4,8 +4,8 @@
     <title>${title}</title>
     <link>${link}</link>
     <language>en-us</language>
-    <itunes:subtitle>${subtitle}</itunes:subtitle>
     <itunes:author>The Story Collider</itunes:author>
+    <itunes:subtitle>${description}</itunes:subtitle>
     <itunes:summary>${description}</itunes:summary>
     <description>${description}</description>
     <itunes:owner>
@@ -13,6 +13,7 @@
       <itunes:email>${owner.email}</itunes:email>
     </itunes:owner>
     <itunes:explicit>yes</itunes:explicit>
+    <media:rating>adult</media:rating>
     <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="${feed_url}"/>
     <media:thumbnail url="${image_url}"/>
     <itunes:image href="${image_url}"/>
@@ -28,8 +29,6 @@
       </contributor>
     % endfor
 
-    <media:rating>adult</media:rating>
-    <media:description type="plain">${description_short}</media:description>
 
     % for item in items:
       <item>
