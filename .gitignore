@@ -1,2 +1,5 @@
 _site
 .DS_Store
+.pyc
+podcast/test/
+.*.sw?

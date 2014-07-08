@@ -1,0 +1,181 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import with_statement
+
+import os
+import sys
+import glob
+import urllib
+import hashlib
+import logging
+from os import path
+from datetime import datetime
+
+sys.path.extend(glob.glob(path.join(path.dirname(__file__), "libs/*")))
+
+from mutagen import File
+from mako.template import Template
+from mako import exceptions
+
+log = logging.getLogger()
+
+def seconds2duration(seconds):
+    return "%d:%02d" %(seconds / 60, seconds % 60)
+
+
+class MutogenItem(object):
+    def init(self):
+        try:
+            self.media = self.mutogen_type(self.file.name)
+        except self.mutogen_error as e:
+            self.error = str(e)
+
+    def media_attr(self, key):
+        if key not in self.media:
+            return None
+        val = self.media[key]
+        if isinstance(val, list) and len(val) > 0:
+            val = val[0]
+        return val
+
+    def mimetype(self):
+        return self.media.mime[0]
+
+    def length(self):
+        return self.media.info.length
+
+    def title(self):
+        return self.media_attr("title") or os.path.basename(self.file.name)
+
+    def author(self):
+        return self.media_attr("artist")
+
+    def subtitle(self):
+        return self.media_attr("album")
+
+
+class obj(object):
+    def __init__(self, attrs):
+        self.__dict__.update(attrs)
+
+def mp3_attr(mp3, key, attr="text"):
+    if key not in mp3:
+        return ""
+    val = mp3[key]
+    val = getattr(val, attr)
+    if isinstance(val, list) and len(val) > 0:
+        val = val[0]
+    return val or ""
+
+def make_permalink(prefix, filename):
+    md5 = hashlib.md5()
+    with open(filename) as f:
+        for hunk in iter(lambda: f.read(4096), ""):
+            md5.update(hunk)
+    return "%s/%s?md5=%s" %(
+        prefix,
+        urllib.quote(os.path.basename(filename)),
+        md5.hexdigest(),
+    )
+
+def mtime(filename):
+    mtime_epoch = os.path.getmtime(filename)
+    return datetime.fromtimestamp(mtime_epoch)
+
+def main():
+    logging.basicConfig()
+    if len(sys.argv) != 4:
+        print "Usage: %s FEED_URL MP3_URL_PREFIX MP3_DIR" %(sys.argv[0], )
+        print "Example: %s https://example.com/podcast/feed.atom https://example.com/podcast/mp3s/ mp3s/" %(sys.argv[0], )
+        return 1
+
+    feed_url, mp3_url_prefix, mp3_dir = sys.argv[1:]
+    mp3_url_prefix = mp3_url_prefix.rstrip("/")
+
+    items = []
+    for filename in glob.glob(mp3_dir + "/*.mp3"):
+        mp3 = File(filename)
+        #{u'APIC:': APIC(encoding=0, mime=u'image/png', type=0, desc=u'', data=...'), 'TDRC': TDRC(encoding=0, text=[u'2014']), 'TIT2': TIT2(encoding=0, text=[u'Hoss Gifford on Feb 27th']), u"COMM::'eng'": COMM(encoding=0, lang='eng', desc=u'', text=[u'These are the comments ']), 'TRCK': TRCK(encoding=0, text=[u'1']), 'TPE1': TPE1(encoding=0, text=[u'xvzf']), 'TALB': TALB(encoding=0, text=[u'nontrivial']), 'TCOM': TCOM(encoding=0, text=[u'Hoss Gifford'])}
+        image_url = None
+        apic = mp3.get("APIC:")
+        if apic:
+            png = filename + ".png"
+            with open(png, "w") as f:
+                f.write(apic.data)
+            image_url = "%s/%s" %(mp3_url_prefix, os.path.basename(png))
+        items.append(obj({
+            "permalink": make_permalink(mp3_url_prefix, filename),
+            "title": mp3_attr(mp3, "TIT2"),
+            "pubDate": mtime(filename).strftime('%a, %d %b %Y %H:%M:%S GMT'),
+            "duration": seconds2duration(mp3.info.length),
+            "author": mp3_attr(mp3, "TPE1"),
+            "summary": mp3_attr(mp3, "COMM::'eng'"),
+            "image_url": image_url,
+            "size": str(os.path.getsize(filename)),
+        }))
+
+    context = {
+        "title": "xvzf",
+        "subtitle": "True Stories from Toronto Tech Workers",
+        "link": "http://xvzf.io",
+        "feed_url": feed_url,
+        "image_url": "XXX get an image URL",
+        "author": obj({
+            "name": "xvzf",
+            "email": "hello@xvzf.io",
+            "uri": "http://xvzf.io",
+        }),
+        "owner": obj({
+            "name": "David Wolever",
+            "email": "david@wolever.net",
+        }),
+        "contributors": [
+            obj({"name": u"Phill Mendonça-Vieira", "email": "phillmv@okayfail.com"}),
+            obj({"name": "David Wolever", "email": "david@wolever.net"}),
+        ],
+        "description_short": "XXX short description ",
+        "description": """
+            XXX FINISH DESCRIPTION
+        """,
+        "categories": ["Technology", "Society & Culture"],
+        "items": items,
+    }
+
+    template_file = os.path.join(os.path.dirname(__file__), "template.xml")
+    template = Template(
+        open(template_file).read().decode("utf-8"),
+        default_filters=["x"],
+    )
+    try:
+        print template.render(**context).encode("utf-8")
+    except:
+        print exceptions.text_error_template().render()
+
+
+    #fg.contributor(name=u"Phill Mendonça-Vieira", email="phillmv@okayfail.com")
+    #fg.contributor(name="David Wolever", email="david@wolever.net")
+
+    ## TODO: Icon and logo: 
+    #fg.icon("http://ex.com/icon.jpg")
+    #fg.logo("http://ex.com/logo.jpg")
+
+    #fg.rights("cc-by")
+    #fg.subtitle("This is a cool feed!")
+    #fg.link( href="http://larskiesow.de/test.atom", rel="self" )
+    #fg.language("de")
+    #fe = fg.add_entry()
+    #fe.id("http://lernfunk.de/_MEDIAID_123#1")
+    #fe.title("First Element")
+    #fe.content("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tamen
+    #                aberramus a proposito, et, ne longius, prorsus, inquam, Piso, si ista
+    #                mala sunt, placet. Aut etiam, ut vestitum, sic sententiam habeas aliam
+    #                domesticam, aliam forensem, ut in fronte ostentatio sit, intus veritas
+    #                occultetur? Cum id fugiunt, re eadem defendunt, quae Peripatetici,
+    #                verba.""")
+    #fe.summary("Lorem ipsum dolor sit amet, consectetur adipiscing elit...")
+    #fe.link( href="http://example.com", rel="alternate" )
+    #fe.author( name="Lars Kiesow", email="lkiesow@uos.de" )
+    #print fg.atom_str(pretty=True)
+
+if __name__ == "__main__":
+    sys.exit(main())

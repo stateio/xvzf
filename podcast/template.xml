@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>${title}</title>
+    <link>${link}</link>
+    <language>en-us</language>
+    <itunes:subtitle>${subtitle}</itunes:subtitle>
+    <itunes:author>The Story Collider</itunes:author>
+    <itunes:summary>${description}</itunes:summary>
+    <description>${description}</description>
+    <itunes:owner>
+      <itunes:name>${owner.name}</itunes:name>
+      <itunes:email>${owner.email}</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>yes</itunes:explicit>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="${feed_url}"/>
+    <media:thumbnail url="${image_url}"/>
+    <itunes:image href="${image_url}"/>
+    % for cat in categories:
+      <itunes:category text="${cat}"/>
+      <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">${cat}</media:category>
+    % endfor
+
+    % for contrib in contributors:
+      <contributor>
+        <name>${contrib.name}</name>
+        <email>${contrib.email}</email>
+      </contributor>
+    % endfor
+
+    <media:rating>adult</media:rating>
+    <media:description type="plain">${description_short}</media:description>
+
+    % for item in items:
+      <item>
+        <guid>${item.permalink}</guid>
+        <title>${item.title}</title>
+        <pubDate>${item.pubDate}</pubDate>
+        <link>${item.permalink}</link>
+        <itunes:duration>${item.duration}</itunes:duration>
+        <itunes:author>${item.author}</itunes:author>
+        <itunes:explicit>yes</itunes:explicit>
+        <itunes:summary>${item.summary}</itunes:summary>
+        <itunes:subtitle>${item.summary}</itunes:subtitle>
+        <description>${item.summary}</description>
+        % if item.image_url:
+          <itunes:image href="${item.image_url}"/>
+        % endif
+        <media:content url="${item.permalink}" fileSize="${item.size}" type="audio/mpeg"/>
+        <enclosure url="${item.permalink}" length="${item.size}" type="audio/mpeg"/>
+      </item>
+    % endfor
+  </channel>
+</rss>
