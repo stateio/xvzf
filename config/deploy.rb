@@ -8,6 +8,7 @@ set :use_sudo, false
 set :scm, :git
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
+set :branch, ENV['BRANCH'] || 'master'
 
 set :user, "deploy"
 role :web, "okayfail.com"
@@ -17,7 +18,7 @@ namespace :deploy do
     run "cd #{current_path} && bundle install"
   end
   task :run_jekyll do
-    run "cd #{current_path} && bundle exec jekyll build"
+    run "cd #{current_path} && bundle exec middleman build"
   end
 
  desc "Linking application specific directories"
