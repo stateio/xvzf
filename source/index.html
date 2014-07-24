@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/page.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,23 +21,54 @@
 
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div id="logo" class="col-md-6">
+          <h1>xvzf</h1>
+          <h2>A night out for toronto tech workers.</h2>
+        </div>
+      </div>
 
-    <div id="bg">
-      <div id="rsvp-header">
-        <h3>xvzf is a project by <br/><a href="http://twitter.com/wolever">@wolever</a> and <a href="http://twitter.com/phillmv">@phillmv</a></h3>
-        <br/>
-        <h4>Keep in touch:</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Find out about the next event.</p>
+          <div id="rsvp-footer">
+            <form role="form">
+              <input type="email" class="form-control" id="email" placeholder="someniceperson@example.com">
+              <br/>
+              <!-- <button type="submit" class="btn btn&#45;primary">Holla at me</button> -->
+              <button type="submit" class="btn btn-default rsvp">holla</a>
+            </form>
+          </div>
 
-        <div id="rsvp-footer">
-          <form role="form">
-            <input type="email" class="form-control" id="email" placeholder="(your email here)">
-            <br/>
-            <!-- <button type="submit" class="btn btn&#45;primary">Holla at me</button> -->
-            <button type="submit" class="btn btn-default rsvp">holla</a>
-          </form>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Previous evenings:</h3>
+        </div>
+        <div class="col-md-6">
+          <h4>nontrivial</h4>
+        </div>
+        <div class="col-md-6">
         </div>
       </div>
     </div>
+
+    <div id="nontrivial">
+      <header>
+        <h1>nontrivial</h1>
+        <h3>stories about the difficult</h3>
+      </header>
+      <footer>
+        <h2>8pm, Thursday, February 27, 2014</h2>
+        <!-- <button id="moar" class="btn btn&#45;default rsvp">say what?</button> -->
+      </footer>
+    </div>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

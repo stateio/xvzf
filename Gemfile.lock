@@ -116,7 +116,6 @@ DEPENDENCIES
   capistrano
   middleman (~> 3.2.1)
   middleman-livereload (~> 3.1.0)
-  rb-inotify
   rvm-capistrano
   therubyracer
   wdm (~> 0.1.0)
