@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>xvzf</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap -->
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="stylesheets/page.css" rel="stylesheet">
@@ -21,52 +21,95 @@
 
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div id="logo" class="col-md-6">
-          <h1>xvzf</h1>
-          <h2>A night out for toronto tech workers.</h2>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <p>Find out about the next event.</p>
-          <div id="rsvp-footer">
-            <form role="form">
-              <input type="email" class="form-control" id="email" placeholder="someniceperson@example.com">
-              <br/>
-              <!-- <button type="submit" class="btn btn&#45;primary">Holla at me</button> -->
-              <button type="submit" class="btn btn-default rsvp">holla</a>
-            </form>
+    <div id="hello">
+      <div class="container">
+        <div class="row">
+          <div id="logo" class="col-md-6 col-md-offset-2">
+            <h1 class="logo">xvzf</h1>
+            <h2>A night out for Toronto tech workers.</h2>
           </div>
-
-
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <h3>Previous evenings:</h3>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-2">
+            <p>Find out about the next event:</p>
+            <div id="rsvp-footer">
+              <form role="form" class="form-inline">
+                <div class="form-group  input-dark col-md-10" style="padding-left: 0px; padding-right: 10px;">
+                  <input type="email" class="form-control input-dark" id="email" placeholder="someniceperson@example.com">
+                </div>
+                <button type="submit" class="btn btn-default rsvp">holla</a>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6">
-          <h4>nontrivial</h4>
+        <div class="row" style="margin-top: 40px;">
+          <div class="col-md-6 col-md-offset-2">
+            <h4>We don't like being grouped by what kind of work we perform.</h4>
+            <p>Life is about more than your startup, your app or what you do at your job.</p>
+            <h4 style="margin-top: 40px;">Join us for an evening in a safe, supportive space.</h4> 
+            <p>Meet folks you haven't run into before, and listen to people share true, personal stories.</p>
+          </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+          <div class="col-md-6 col-md-offset-2">
+            <a href='' class="previously btn btn-default">check out our previous events</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div id="nontrivial">
+    <div id="persistence" class="event">
+      <header>
+        <h1>persistence</h1>
+        <h3>stories about endurance</h3>
+      </header>
+      <footer>
+        <h3>Featuring stories by:<br/>Clint Hardwood, Katherine Hague, Steve Shaddick, Dessy Daskalov, and Dan Friedman</h3>
+        <h2>May 29, 2014</h2>
+      </footer>
+    </div>
+
+
+    <div id="nontrivial" class="event">
       <header>
         <h1>nontrivial</h1>
         <h3>stories about the difficult</h3>
       </header>
       <footer>
-        <h2>8pm, Thursday, February 27, 2014</h2>
-        <!-- <button id="moar" class="btn btn&#45;default rsvp">say what?</button> -->
+        <h3>Featuring stories by:<br/>Hoss Gifford, Andrew Eberbach, Cecily Carver, Joan Touzet, Mustefa Jo'shen, and Tom Walsham</h3>
+        <h2>February 27, 2014</h2>
       </footer>
     </div>
+
+    <div id="credits" class="event">
+      <header>
+        <h1>We would like to thank the following:</h1>
+      </header>
+      <div class="row thanks">
+        <div class="col-md-4 col-md-offset-4">
+          <ul class="unstyled">
+            <li>Taavi Burns, who recorded our audio.</li>
+            <li>Laura Sutula, who greeted people at the door.</li>
+            <li>The Magpie Taproom, who allowed us to use their space.</li>
+            <li>Everyone who came out and shared their stories.</li>
+            <li>Everyone who came out and said hi, and listened, and enjoyed themselves, or were merely amused.</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <footer>
+        <h3><span class="logo">xvzf</span> is a project by <a href="http://twitter.com/wolever">David Wolever</a> and <a href="http://twitter.com/phillmv">Phillip Mendonça-Vieira</a>.</h3>
+        <div class="row contact">
+          <div class="col-md-4 col-md-offset-4"><p>Questions? Comments? Reach us at hello@xvzf.io</p>
+          </div>
+        </div>
+
+      </footer>
+    </div>
+
 
 
 
@@ -78,13 +121,13 @@
     <script>
       var myDataRef = new Firebase('https://xvzf.firebaseio.com/');
       $('form').submit(function(e) {
-        email = $(this).children("input").val();
+        email = $(this).find("input").val();
         if (email) {
           myDataRef.child("mail").push(email);
-          $(this).children("input").val("Sweet. We'll holler at you.");
-          $(this).children("input").css("text-align", "center");
-          $(this).children("input").prop('disabled', 'disabled');
-          $(this).children("button").prop('disabled', 'disabled');
+          $(this).find("input").val("Sweet. We'll let you know.");
+          $(this).find("input").css("text-align", "center");
+          $(this).find("input").prop('disabled', 'disabled');
+          $(this).find("button").prop('disabled', 'disabled');
         }
         return false;
       });
@@ -98,6 +141,13 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+
+      $("a.previously").click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $("#persistence").offset().top
+        }, 800);
+      });
 
 
     </script>

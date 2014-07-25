@@ -1,0 +1,174 @@
+.logo {
+  font-family: Monospace;
+}
+
+#hello h1 {
+  font-size: 60px;
+}
+
+body, html {
+  height: 100%;
+  color: white;
+}
+.btn.btn-dark {
+   color: white;
+  background-color: transparent;
+}
+
+.input-dark, .input-dark[disabled] {
+   background-color: transparent;
+   color: white;
+ }
+
+ .input-dark ::-webkit-input-placeholder, .input-dark -moz-placeholder, .input-dark  -moz-placeholder, .input-dark -ms-input-placeholder  {
+   text-align: center;
+   color:    white;
+
+ }
+
+#hello {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+    background-image: url("/img/election.pixel.jpg")
+
+}
+
+.event {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+
+
+  margin: 0;
+  padding: 0;
+
+
+  header {
+    text-align: center;
+    padding-top: 40px;
+    padding-top: 0px;
+    margin-top: 0;
+  }
+  footer {
+    width: 100%;
+    bottom: 50px;
+    position: absolute;
+    text-align: center;
+  }
+
+  h1, h3, h4 {
+    margin-top: 0px;
+  }
+
+  h1 {
+    margin-bottom: 0px;
+  }
+
+}
+
+#credits {
+  background: black;
+  h1 {
+    font-size: 30px;
+    padding-top: 20px;
+  }
+  h2 {
+  }
+  .thanks {
+    margin-top: 30px;
+    li {
+      margin-top: 10px;
+    }
+  }
+  footer h3 {
+    font-weight: normal;
+  }
+
+  a, a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+}
+
+
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) { 
+  .event header h1 {
+    font-size: 55px;
+  }
+
+  .event header h3 {
+    font-size: 20px;
+  }
+
+  .event header h2 {
+    font-size: 34px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .event footer h2 {
+    font-size: 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #persistence { 
+    background-image: url("/img/pbg.phone.jpg")
+  }
+
+  #nontrivial {
+    background-image: url("/img/cylinder2.phone.jpg");
+  }
+}
+
+@media(max-width:767px) {
+  #persistence {
+    background-image: url("/img/pbg.phone.jpg");
+  }
+
+  #nontrivial {
+    background-image: url("/img/cylinder2.phone.jpg");
+  }
+
+}
+
+@media(min-width:768px){
+  .event header h1 {
+    font-size: 90px;
+  }
+
+  #persistence {
+    background-image: url("/img/pbg.jpg");
+  }
+
+  #nontrivial {
+    background-image: url("/img/cylinder2.jpg");
+  }
+
+}
+
+
+
+/* #nontrivial header { */
+/*   text-align: center; */
+/*   padding-top: 40px; */
+/*   padding-top: 0px; */
+/*   margin-top: 0; */
+/* } */
+
+
