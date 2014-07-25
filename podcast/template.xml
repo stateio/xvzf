@@ -4,7 +4,7 @@
     <title>${title}</title>
     <link>${link}</link>
     <language>en-us</language>
-    <itunes:author>The Story Collider</itunes:author>
+    <itunes:author>xvzf</itunes:author>
     <itunes:subtitle>${description}</itunes:subtitle>
     <itunes:summary>${description}</itunes:summary>
     <description>${description}</description>

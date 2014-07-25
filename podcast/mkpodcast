@@ -98,7 +98,7 @@ def main():
             "email": "david@wolever.net",
         }),
         "contributors": [
-            obj({"name": u"Phill Mendonça-Vieira", "email": "phillmv@okayfail.com"}),
+            obj({"name": u"Phillip Mendonça-Vieira", "email": "phillmv@okayfail.com"}),
             obj({"name": "David Wolever", "email": "david@wolever.net"}),
         ],
         "description": """
