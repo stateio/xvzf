@@ -35,7 +35,7 @@ body, html {
   height: 100%;
   position: relative;
   display: block;
-    background-image: url("/img/election.pixel.jpg")
+  background-image: url("/img/election.pixel.jpg")
 
 }
 
@@ -78,7 +78,7 @@ body, html {
 }
 
 #credits {
-  background: black;
+  background-image: url("/img/stars2.gif");
   h1 {
     font-size: 30px;
     padding-top: 20px;
