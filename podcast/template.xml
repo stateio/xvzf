@@ -15,8 +15,11 @@
     <itunes:explicit>yes</itunes:explicit>
     <media:rating>adult</media:rating>
     <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="${feed_url}"/>
-    <media:thumbnail url="${image_url}"/>
-    <itunes:image href="${image_url}"/>
+    % if image_url:
+        <media:thumbnail url="${image_url}"/>
+        <itunes:image href="${image_url}"/>
+    % endif
+
     % for cat in categories:
       <itunes:category text="${cat}"/>
       <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">${cat}</media:category>

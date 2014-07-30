@@ -89,7 +89,7 @@ def main():
         "title": "xvzf: True Stories from Toronto Tech Workers",
         "link": "http://xvzf.io",
         "feed_url": feed_url,
-        "image_url": "XXX get an image URL",
+        "image_url": None, #"XXX get an image URL",
         "author": obj({
             "name": "xvzf",
             "email": "hello@xvzf.io",
@@ -104,7 +104,8 @@ def main():
             obj({"name": "David Wolever", "email": "david@wolever.net"}),
         ],
         "description": """
-            XXX FINISH DESCRIPTION
+            xvzf is a regularly occuring night for Toronto tech workers to come
+            together and share true, personal stories. Find out more at xvzf.io.
         """,
         "categories": ["Technology", "Society & Culture"],
         "items": items,
