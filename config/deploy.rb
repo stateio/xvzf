@@ -18,7 +18,7 @@ namespace :deploy do
   task :bundle do
     run "cd #{current_path} && bundle install"
   end
-  task :run_jekyll do
+  task :run_middleman do
     run "cd #{current_path} && bundle exec middleman build"
   end
 
@@ -30,17 +30,5 @@ namespace :deploy do
 
 end
 
-after "deploy:restart", "deploy:run_jekyll"
-after "deploy:run_jekyll", "deploy:create_symlinks"
-
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+after "deploy:restart", "deploy:run_middleman"
+after "deploy:run_middleman", "deploy:create_symlinks"
