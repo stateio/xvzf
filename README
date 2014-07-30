@@ -1,0 +1,5 @@
+To build the podcast:
+1) Put MP3 files at xvzf.io:/var/www/xvzf.io/shared/mp3
+2) bundle exec cap podcast
+3) git commit; git push
+4) bundle exec cap deploy

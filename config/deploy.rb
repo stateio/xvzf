@@ -31,5 +31,19 @@ namespace :deploy do
 
 end
 
+task :podcast do
+  podcast_file = File.join(File.dirname(__FILE__), "../_podcast/podcast.atom")
+  temp_file = "/tmp/xvzf-podcast-temp.atom"
+  File.open(temp_file, 'w') do |file|
+    run "#{current_path}/podcast/mkreal" do |channel, stream, data|
+      file.puts data
+      puts data
+    end
+  end
+  File.rename(temp_file, podcast_file)
+  puts
+  puts "Podcast saved to _podcast/podcast.atom"
+end
+
 after "deploy:restart", "deploy:run_middleman"
 after "deploy:run_middleman", "deploy:create_symlinks"

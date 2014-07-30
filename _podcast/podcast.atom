@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>xvzf: True Stories from Toronto Tech Workers</title>
+    <link>http://xvzf.io</link>
+    <language>en-us</language>
+    <itunes:author>xvzf</itunes:author>
+    <itunes:subtitle>
+            xvzf is a regularly occuring night for Toronto tech workers to come
+            together and share true, personal stories. Find out more at xvzf.io.
+        </itunes:subtitle>
+    <itunes:summary>
+            xvzf is a regularly occuring night for Toronto tech workers to come
+            together and share true, personal stories. Find out more at xvzf.io.
+        </itunes:summary>
+    <description>
+            xvzf is a regularly occuring night for Toronto tech workers to come
+            together and share true, personal stories. Find out more at xvzf.io.
+        </description>
+    <itunes:owner>
+      <itunes:name>David Wolever</itunes:name>
+      <itunes:email>david@wolever.net</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>yes</itunes:explicit>
+    <media:rating>adult</media:rating>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://xvzf.io/podcast.atom"/>
+
+      <itunes:category text="Technology"/>
+      <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category>
+      <itunes:category text="Society &amp; Culture"/>
+      <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Society &amp; Culture</media:category>
+
+      <contributor>
+        <name>Phillip Mendonça-Vieira</name>
+        <email>phillmv@okayfail.com</email>
+      </contributor>
+      <contributor>
+        <name>David Wolever</name>
+        <email>david@wolever.net</email>
+      </contributor>
+
+
+      <item>
+        <guid>d3a755fe9d31ee109132182ace0c71d0</guid>
+        <title>Hoss Gifford</title>
+        <pubDate>Wed, 30 Jul 2014 18:05:18 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=d3a755fe9d31ee109132182ace0c71d0</link>
+        <itunes:duration>16:21</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>yes</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=d3a755fe9d31ee109132182ace0c71d0" fileSize="15039737" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=d3a755fe9d31ee109132182ace0c71d0" length="15039737" type="audio/mpeg"/>
+      </item>
+  </channel>
+</rss>
+
