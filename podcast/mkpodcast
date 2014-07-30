@@ -89,7 +89,7 @@ def main():
         "title": "xvzf: True Stories from Toronto Tech Workers",
         "link": "http://xvzf.io",
         "feed_url": feed_url,
-        "image_url": None, #"XXX get an image URL",
+        "image_url": "http://src.xvzf.io/podcast.png",
         "author": obj({
             "name": "xvzf",
             "email": "hello@xvzf.io",

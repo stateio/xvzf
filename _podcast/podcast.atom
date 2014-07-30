@@ -24,6 +24,8 @@
     <itunes:explicit>yes</itunes:explicit>
     <media:rating>adult</media:rating>
     <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://xvzf.io/podcast.atom"/>
+        <media:thumbnail url="http://src.xvzf.io/podcast.png"/>
+        <itunes:image href="http://src.xvzf.io/podcast.png"/>
 
       <itunes:category text="Technology"/>
       <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category>
