@@ -32,7 +32,7 @@
 
     % for item in items:
       <item>
-        <guid>${item.permalink}</guid>
+        <guid>${item.guid}</guid>
         <title>${item.title}</title>
         <pubDate>${item.pubDate}</pubDate>
         <link>${item.permalink}</link>

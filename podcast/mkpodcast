@@ -36,15 +36,11 @@ def mp3_attr(mp3, key, attr="text"):
         val = val[0]
     return val or ""
 
-def make_permalink(prefix, filename):
-    md5 = hashlib.md5()
-    with open(filename) as f:
-        for hunk in iter(lambda: f.read(4096), ""):
-            md5.update(hunk)
+def make_permalink(prefix, filename, md5):
     return "%s/%s?md5=%s" %(
         prefix,
         urllib.quote(os.path.basename(filename)),
-        md5.hexdigest(),
+        md5,
     )
 
 def mtime(filename):
@@ -72,8 +68,14 @@ def main():
             with open(png, "w") as f:
                 f.write(apic.data)
             image_url = "%s/%s" %(mp3_url_prefix, os.path.basename(png))
+        md5 = hashlib.md5()
+        with open(filename) as f:
+            for hunk in iter(lambda: f.read(4096), ""):
+                md5.update(hunk)
+        md5_hex = md5.hexdigest()
         items.append(obj({
-            "permalink": make_permalink(mp3_url_prefix, filename),
+            "guid": md5_hex,
+            "permalink": make_permalink(mp3_url_prefix, filename, md5_hex),
             "title": mp3_attr(mp3, "TIT2"),
             "pubDate": mtime(filename).strftime('%a, %d %b %Y %H:%M:%S GMT'),
             "duration": seconds2duration(mp3.info.length),
