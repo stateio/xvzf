@@ -10,7 +10,8 @@ ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 set :branch, ENV['BRANCH'] || 'master'
 
-set :user, "deploy"
+set :deploy_to, "/var/www/#{fetch(:application)}"
+set :user, "xvzf"
 role :web, "okayfail.com"
 
 namespace :deploy do
