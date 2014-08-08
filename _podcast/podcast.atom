@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
-    <title>xvzf: True Stories from Toronto Tech Workers</title>
+    <title>xvzf: true stories from toronto tech workers</title>
     <link>http://xvzf.io</link>
     <language>en-us</language>
     <itunes:author>xvzf</itunes:author>
@@ -24,8 +24,8 @@
     <itunes:explicit>yes</itunes:explicit>
     <media:rating>adult</media:rating>
     <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://xvzf.io/podcast.atom"/>
-        <media:thumbnail url="http://src.xvzf.io/podcast.png"/>
-        <itunes:image href="http://src.xvzf.io/podcast.png"/>
+        <media:thumbnail url="http://src.xvzf.io/podcast.jpg"/>
+        <itunes:image href="http://src.xvzf.io/podcast.jpg"/>
 
       <itunes:category text="Technology"/>
       <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category>
@@ -56,6 +56,20 @@
           <itunes:image href="http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3.png"/>
         <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=47e9b32535f059beef7332747c52a7f0" fileSize="15454370" type="audio/mpeg"/>
         <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=47e9b32535f059beef7332747c52a7f0" length="15454370" type="audio/mpeg"/>
+      </item>
+      <item>
+        <guid>d21aded29de6c532c462b707d5a016b7</guid>
+        <title>Cecily Carver</title>
+        <pubDate>Fri, 08 Aug 2014 02:16:38 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.nontrivial.cecily.mp3?md5=d21aded29de6c532c462b707d5a016b7</link>
+        <itunes:duration>8:59</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>yes</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.cecily.mp3?md5=d21aded29de6c532c462b707d5a016b7" fileSize="8432722" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.cecily.mp3?md5=d21aded29de6c532c462b707d5a016b7" length="8432722" type="audio/mpeg"/>
       </item>
   </channel>
 </rss>
