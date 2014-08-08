@@ -86,10 +86,10 @@ def main():
         }))
 
     context = {
-        "title": "xvzf: True Stories from Toronto Tech Workers",
+        "title": "xvzf: true stories from toronto tech workers",
         "link": "http://xvzf.io",
         "feed_url": feed_url,
-        "image_url": "http://src.xvzf.io/podcast.png",
+        "image_url": "http://src.xvzf.io/podcast.jpg",
         "author": obj({
             "name": "xvzf",
             "email": "hello@xvzf.io",
