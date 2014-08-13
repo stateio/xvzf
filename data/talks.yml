@@ -9,6 +9,7 @@
   duration: "8:59"
   image_url: xvzf.nontrivial.png
   fileSize: 8432722
+  explicit: 'clean'
 
 - filename: xvzf.nontrivial.hoss.mp3
   md5: 47e9b32535f059beef7332747c52a7f0
@@ -18,3 +19,4 @@
   "summary": 
   "image_url": xvzf.nontrivial.png
   "fileSize": '15039737'
+  explicit: 'yes'

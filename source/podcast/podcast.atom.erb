@@ -40,7 +40,7 @@
         <link><%= podcast_path(talk.filename, talk.md5)%></link>
         <itunes:duration><%= talk.duration %></itunes:duration>
         <itunes:author>xvzf</itunes:author>
-        <itunes:explicit>yes</itunes:explicit>
+        <itunes:explicit><%= talk.explicit %></itunes:explicit>
         <itunes:summary><%=h talk.summary%></itunes:summary>
         <itunes:subtitle><%=h talk.summary%></itunes:subtitle>
         <description><%=h talk.summary%></description>
