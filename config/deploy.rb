@@ -25,9 +25,10 @@ namespace :deploy do
  desc "Linking application specific directories"
   task :create_symlinks do
     run "ln -nfs #{shared_path}/ohhi/ #{release_path}/_site/ohhi"
-    run "ln -nfs #{shared_path}/mp3/ #{release_path}/_podcast/mp3"
     run "ln -nfs #{release_path}/_site/ohhi #{release_path}/_site/public"
-    run "ln -nfs #{release_path}/_podcast/podcast.atom #{release_path}/_site/"
+    
+    run "ln -nfs #{release_path}/_site/podcast/ #{release_path}/_podcast"
+    run "ln -nfs #{shared_path}/mp3/ #{release_path}/_podcast/mp3"
   end
 
 end
