@@ -1,0 +1,24 @@
+"title": "xvzf: true stories from toronto tech workers"
+"link": "http://xvzf.io"
+"feed_url": "http://xvzf.io/podcast.atom"
+"image_url": "http://src.xvzf.io/img/podcast.jpg"
+"author": 
+  "name": "xvzf"
+  "email": "hello@xvzf.io"
+  "uri": "http://xvzf.io"
+"owner":
+  "name": "David Wolever"
+  "email": "david@wolever.net"
+"contributors":
+  - "name": "Phillip Mendonça-Vieira"
+    "email": "phillmv@okayfail.com"
+  - "name": "David Wolever"
+    "email": "david@wolever.net"
+  
+description: >
+  xvzf is a regularly occuring night for Toronto tech workers to come
+  together and share true, personal stories. Find out more at xvzf.io.
+"categories": 
+  - "Technology"
+  - "Society & Culture"
+

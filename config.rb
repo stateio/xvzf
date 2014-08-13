@@ -68,3 +68,21 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+PODCAST_SITE = "http://src.xvzf.io"
+helpers do
+  def podcast_path(href, md5)
+    "#{PODCAST_SITE}/mp3/#{href}?md5=#{md5}"
+  end
+
+  def format_date(str)
+    Date.parse(str).strftime('%a, %d %b %Y %H:%M:%S GMT')
+  end
+
+  def podcast_image_path(href)
+    "#{PODCAST_SITE}/img/#{href}"
+  end
+end
+
+page "/podcast/*", :layout => false
+
