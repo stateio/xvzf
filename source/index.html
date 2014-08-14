@@ -128,8 +128,11 @@
 
     <script>
       $('form').submit(function(e) {
-        $(this).find("input").prop('disabled', 'disabled');
-        $(this).find("button").prop('disabled', 'disabled');
+        var $this = $(this);
+        setTimeout(function() {
+          $this.find("input").prop('disabled', 'disabled');
+          $this.find("button").prop('disabled', 'disabled');
+        }, 0);
       });
 
       var _gaq = _gaq || [];
