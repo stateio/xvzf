@@ -29,6 +29,7 @@ namespace :deploy do
     
     run "ln -nfs #{release_path}/_site/podcast/ #{release_path}/_podcast"
     run "ln -nfs #{shared_path}/mp3/ #{release_path}/_podcast/mp3"
+    run "ln -nfs #{shared_path}/webalizer/ #{release_path}/_site/_webalizer"
   end
 
 end
