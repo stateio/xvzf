@@ -33,7 +33,9 @@ body, html {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-position: 50% 50%;
-  height: 100%;
+  min-height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
   display: block;
   background-image: url("/img/election.pixel.jpg")
@@ -46,19 +48,19 @@ body, html {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-position: 50% 50%;
-  height: 100%;
+  min-height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
   display: block;
 
 
   margin: 0;
-  padding: 0;
-
 
   header {
     text-align: center;
     padding-top: 40px;
-    padding-top: 0px;
+    padding-top: 0;
     margin-top: 0;
   }
   footer {
@@ -76,6 +78,13 @@ body, html {
     margin-bottom: 0px;
   }
 
+}
+
+#coc {
+  background-image: url("/img/camouflage.jpg");
+  li {
+    margin-top: 10px;
+  }
 }
 
 #credits {
