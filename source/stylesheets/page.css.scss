@@ -162,6 +162,16 @@ and (max-device-width : 568px) {
     font-size: 90px;
   }
 
+  #coc {
+    li {
+      font-size: 18px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+  }
+
+
   #persistence {
     background-image: url("/img/pbg.jpg");
   }
