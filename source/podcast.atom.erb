@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title><%=h data.xvzf.title%></title>
+    <link><%= data.xvzf.link%></link>
+    <language>en-us</language>
+    <itunes:author>xvzf</itunes:author>
+    <itunes:subtitle><%=h data.xvzf.description%></itunes:subtitle>
+    <itunes:summary><%=h data.xvzf.description%></itunes:summary>
+    <description><%=h data.xvzf.description%></description>
+    <itunes:owner>
+      <itunes:name><%=h data.xvzf.owner.name%></itunes:name>
+      <itunes:email><%=data.xvzf.owner.email%></itunes:email>
+    </itunes:owner>
+    <itunes:explicit>yes</itunes:explicit>
+    <media:rating>adult</media:rating>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="<%=data.xvzf.feed_url%>"/>
+    <% if data.xvzf.image_url %>
+      <media:thumbnail url="<%= data.xvzf.image_url%>"/>
+      <itunes:image href="<%= data.xvzf.image_url%>"/>
+    <% end %>
+
+    <% data.xvzf.categories.each do |cat| %>
+      <itunes:category text="<%=h cat%>"/>
+      <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd"><%=h cat%></media:category>
+    <% end %>
+
+    <% data.xvzf.contributors.each do |contrib| %>
+      <contributor>
+        <name><%=h contrib.name%></name>
+        <email><%=contrib.email%></email>
+      </contributor>
+    <% end %>
+
+    <% data.talks.each do |talk| %>
+      <item>
+        <guid><%=talk.md5 %></guid>
+        <title><%=h talk.title%></title>
+        <pubDate><%= format_date(talk.pubDate) %></pubDate>
+        <link><%= podcast_path(talk.filename, talk.md5)%></link>
+        <itunes:duration><%= talk.duration %></itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit><%= talk.explicit %></itunes:explicit>
+        <itunes:summary><%=h talk.summary%></itunes:summary>
+        <itunes:subtitle><%=h talk.summary%></itunes:subtitle>
+        <description><%=h talk.summary%></description>
+        <% if talk.image_url %>
+        <itunes:image href="<%= podcast_image_path(talk.image_url) %>"/>
+        <% end %>
+        <media:content url="<%= podcast_path(talk.filename, talk.md5) %>" fileSize="<%= talk.fileSize %>" type="audio/mpeg"/>
+        <enclosure url="<%= podcast_path(talk.filename, talk.md5) %>" length="<%= talk.fileSize %>" type="audio/mpeg"/>
+      </item>
+    <% end %>
+  </channel>
+</rss>
