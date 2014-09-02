@@ -111,7 +111,22 @@ body, html {
   }
 
 }
-
+p.conditions {
+  padding-top: 20px;
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+.btn.rsvp {
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px;
+}
 
 
 @media only screen 
@@ -137,6 +152,11 @@ and (max-device-width : 568px) {
     padding-right: 10px;
   }
 
+  #exceptions {
+    background-image: url("/img/exception.phone.jpg");
+  }
+
+
   #persistence { 
     background-image: url("/img/pbg.phone.jpg")
   }
@@ -147,6 +167,10 @@ and (max-device-width : 568px) {
 }
 
 @media(max-width:767px) {
+  #exceptions {
+    background-image: url("/img/exception.phone.jpg");
+  }
+
   #persistence {
     background-image: url("/img/pbg.phone.jpg");
   }
@@ -171,6 +195,9 @@ and (max-device-width : 568px) {
     }
   }
 
+  #exceptions {
+    background-image: url("/img/exception.jpg");
+  }
 
   #persistence {
     background-image: url("/img/pbg.jpg");
