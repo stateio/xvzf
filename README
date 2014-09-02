@@ -3,3 +3,6 @@ To build the podcast:
 2) edit data/talks.yml
 3) git commit; git push
 4) bundle exec cap deploy
+
+To test things:
+1) bundle exec middleman s
