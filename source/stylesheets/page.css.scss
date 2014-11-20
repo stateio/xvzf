@@ -130,8 +130,8 @@ p.conditions {
 
 
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) { 
+and (min-width : 320px) 
+and (max-width : 568px) { 
   .event header h1 {
     font-size: 55px;
   }
@@ -152,7 +152,11 @@ and (max-device-width : 568px) {
     padding-right: 10px;
   }
 
-  #exceptions {
+  #closure {
+    background-image: url("/img/closure.phone.jpg");
+  }
+
+  #exceptions.event {
     background-image: url("/img/exception.phone.jpg");
   }
 
@@ -166,7 +170,15 @@ and (max-device-width : 568px) {
   }
 }
 
-@media(max-width:767px) {
+@media (min-width: 569px) and (max-width:767px) {
+  .event header h1 {
+    font-size: 90px;
+  }
+
+  #closure {
+    background-image: url("/img/closure.phone.jpg");
+  }
+
   #exceptions {
     background-image: url("/img/exception.phone.jpg");
   }
@@ -192,6 +204,13 @@ and (max-device-width : 568px) {
     }
     h2 {
       font-size: 50px;
+    }
+  }
+
+  #closure {
+    background-image: url("/img/closure.jpg");
+    header h1 {
+      font-size: 110px;
     }
   }
 
