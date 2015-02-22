@@ -19,33 +19,33 @@
   </head>
   <body>
 
-    
-    <div id="hello">
+
+    <div id="intro">
       <div class="container">
         <div class="row">
           <div id="logo" class="col-md-6 col-md-offset-1">
             <h1 class="logo">xvzf</h1>
-            <h2>A night out for Toronto tech workers.</h2>
+            <h2>A story telling night for Toronto tech workers.</h2>
           </div>
         </div>
 
 
         <div class="row">
           <div class="col-md-6 col-md-offset-1">
-            <h4>We don't like being grouped by what kind of work we perform.</h4>
+            <h4>Don't be grouped by the work you perform.</h4>
             <p>Life is about more than your startup, your app or what you do at your job.</p>
             <h4 style="margin-top: 40px;">Join us for an evening in a safe, supportive space.</h4> 
-            <p>Meet folks you haven't run into before, and listen to people share true, personal stories.</p>
+            <p>Meet folks you haven't run into before, and listen to people share true, personal stories. Before attending, please read our <a href="#coc">code of conduct</a>.</p>
           </div>
 
         </div>
 
         <div class="row">
-          <div class="col-md-4 col-md-offset-1" style="margin-top: 20px">
-            <p>Find out about the next event:</p>
+          <div class="col-md-5 col-md-offset-1" style="margin-top: 20px">
+            <p>To find out about upcoming events, join our mailing list:</p>
             <div id="rsvp-footer">
               <form role="form" class="form-inline" action="https://xvzf.us8.list-manage.com/subscribe/post?u=3864a5354273848f85ceb5cc0&amp;id=02737ca598" method="post">
-                <div class="form-group  input-dark col-md-10" style="padding-left: 0px; padding-right: 10px;">
+                <div class="form-group  col-md-10" style="padding-left: 0px; padding-right: 10px;">
                   <input type="email" name="EMAIL" class="form-control input-dark" id="email" placeholder="someniceperson@example.com">
                 </div>
                 <button type="submit" class="btn btn-default">holla</a>
@@ -61,18 +61,30 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-1">
             <br/>
-            <p>Catch up with previous events through our podcast. Now on <a href="https://soundcloud.com/xvzf/sets/podcast" target="_blank">soundcloud</a>, <a href="https://itunes.apple.com/ca/podcast/xvzf-true-stories-from-toronto/id904722930" target="_blank">itunes</a> or <a href="http://xvzf.io/podcast.atom" target="_blank">rss</a>.</p>
+            <h4>Unable to attend? Check out our podcast.</h4>
+            <p>Catch up with previous events. Now on <a href="https://soundcloud.com/xvzf/sets/podcast" target="_blank">soundcloud</a>, <a href="https://itunes.apple.com/ca/podcast/xvzf-true-stories-from-toronto/id904722930" target="_blank">itunes</a> or <a href="http://xvzf.io/podcast.atom" target="_blank">rss</a>.</p>
+            <br/>
+            <h5>Most recent episode:</h5>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/165892210&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
           </div>
         </div>
 
         <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
           <div class="col-md-6 col-md-offset-1">
+            <h4>Finally,</h4>
             <a href='' class="previously btn btn-default">check out our previous events</a>
+            <a href='' class="about btn btn-default">find out more about us</a>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
           </div>
         </div>
       </div>
     </div>
 
+    
     <div id="closure" class="event">
       <header>
         <h1>closure</h1>
@@ -147,11 +159,12 @@
         <div class="row thanks">
           <div class="col-md-4 col-md-offset-4">
             <ul class="unstyled">
-              <li>Taavi Burns and Chris Melito, who recorded our audio.</li>
-              <li>Laura Sutula, who greeted people at the door.</li>
+              <li>Audio recording has been handled by Taavi Burns and Chris Melito. Chris has also handled most of our podcast production.</li>
+              <li>Laura Sutula, who greets people at the door.</li>
+              <li>Zoe Daniels, who helps speakers craft their stories.</li>
               <li>The Magpie Taproom, who allowed us to use their space.</li>
               <li>Everyone who came out and shared their stories.</li>
-              <li>Everyone who came out and said hi, and listened, and enjoyed themselves, or were merely amused.</li>
+              <li>Everyone who came out and said hi, and listened, and enjoyed themselves.</li>
             </ul>
           </div>
         </div>
@@ -159,7 +172,7 @@
 
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center" style="margin-top: 30px">
-            <h3><span class="logo">xvzf</span> is a project by <a href="http://twitter.com/wolever">David Wolever</a> and <a href="http://twitter.com/phillmv">Phillip Mendonça-Vieira</a>.</h3>
+            <h4><span class="logo">xvzf</span> is a project by <a href="http://twitter.com/wolever">David Wolever</a> and <a href="http://twitter.com/phillmv">Phillip Mendonça-Vieira</a>.</h4>
             <p>Questions? Comments? Reach us at hello@xvzf.io</p>
           </div>
         </div>
@@ -198,9 +211,17 @@
       $("a.previously").click(function(e) {
         e.preventDefault();
         $('html, body').animate({
-          scrollTop: $("#persistence").offset().top
+          scrollTop: $("#closure").offset().top
         }, 800);
       });
+
+      $("a.about").click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $("#credits").offset().top
+        }, 800);
+      });
+
 
       $("#moar").click(function(e) {
         e.preventDefault();
