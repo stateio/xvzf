@@ -2,6 +2,16 @@
 # md5: md5sum filename
 # size: du -b filename
 
+- filename: xvzf.nontrivial.mustefa.mp3
+  md5: b1c331e67b4014b5a9204daac98cf61d
+  title: Mustefa Jo'shen
+  pubDate: "2015-03-06"
+  duration: "03:35"
+  image_url: xvzf.nontrivial.png
+  fileSize: 5182893
+  explicit: 'clean'
+
+
 - filename: xvzf.nontrivial.andrew.mp3
   md5: 9118a917dfe1c485dc608aa755d2c011
   title: Andrew Eberbach
