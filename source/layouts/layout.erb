@@ -1,19 +1,95 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "The Middleman" %></title>
-    
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>xvzf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/page.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
   </head>
-  
-  <body class="<%= page_classes %>">
+  <body>
     <%= yield %>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://guestlistapp.com/javascripts/guestlist-embed.js"></script>
+
+    <script>
+      $('form').submit(function(e) {
+        var $this = $(this);
+        setTimeout(function() {
+          $this.find("input").prop('disabled', 'disabled');
+          $this.find("button").prop('disabled', 'disabled');
+        }, 0);
+      });
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35220277-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      if ($(".last-event").length > 0) {
+        $("a.previously").click(function(e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $(".last-event").offset().top
+          }, 800);
+        });
+      }
+
+      if ($("#credits").length > 0) {
+
+        $("a.about").click(function(e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $("#credits").offset().top
+          }, 800);
+        });
+      }
+
+
+      if ($("#moar").length > 0) {
+        $("#moar").click(function(e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $("#intro").offset().top
+          }, 800);
+        });
+      }
+
+       if ($("#coc").length > 0) {
+        $("a.coc").click(function(e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $("#coc").offset().top
+          }, 800);
+        });
+      }
+
+
+
+    </script>
   </body>
 </html>
+
+
+<%# <%= stylesheet_link_tag "normalize", "all" %>
+<%# <%= javascript_include_tag  "all" %>
+<%# <%= page_classes %>

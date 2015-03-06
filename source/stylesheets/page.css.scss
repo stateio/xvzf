@@ -153,6 +153,10 @@ and (max-width : 568px) {
     padding-right: 10px;
   }
 
+  #escape {
+    background-image: url("/img/escape.phone.jpg");
+  }
+
   #closure {
     background-image: url("/img/closure.phone.jpg");
   }
@@ -174,6 +178,10 @@ and (max-width : 568px) {
 @media (min-width: 569px) and (max-width:767px) {
   .event header h1 {
     font-size: 90px;
+  }
+
+  #escape {
+    background-image: url("/img/escape.phone.jpg");
   }
 
   #closure {
@@ -206,6 +214,14 @@ and (max-width : 568px) {
     h2 {
       font-size: 50px;
     }
+  }
+
+  #escape {
+    background-image: url("/img/escape.jpg");
+     header h1 {
+      font-size: 110px;
+    }
+
   }
 
   #closure {
