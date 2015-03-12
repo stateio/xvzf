@@ -85,4 +85,5 @@ helpers do
 end
 
 page "/podcast/*", :layout => false
+page "/podcast.atom", :layout => false
 
