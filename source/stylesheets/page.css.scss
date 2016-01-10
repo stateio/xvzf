@@ -153,6 +153,11 @@ and (max-width : 568px) {
     padding-right: 10px;
   }
 
+  #resolution {
+    background-image: url("/img/resolution.phone.jpg");
+  }
+
+
   #escape {
     background-image: url("/img/escape.phone.jpg");
   }
@@ -178,6 +183,10 @@ and (max-width : 568px) {
 @media (min-width: 569px) and (max-width:767px) {
   .event header h1 {
     font-size: 90px;
+  }
+
+  #resolution {
+    background-image: url("/img/resolution.phone.jpg");
   }
 
   #escape {
@@ -215,6 +224,11 @@ and (max-width : 568px) {
       font-size: 50px;
     }
   }
+
+  #resolution {
+    background-image: url("/img/resolution.jpg");
+  }
+
 
   #escape {
     background-image: url("/img/escape.jpg");
