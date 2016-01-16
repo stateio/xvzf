@@ -3,6 +3,15 @@
 # size: du -b filename
 #
 
+- filename: xvzf.persistence.dessy.mp3
+  md5: ee8ddf48faf975acdd6fa246da614f6e
+  title: Dessy Daskalov
+  pubDate: "2016-01-15"
+  duration: "15:07"
+  image_url: xvzf.persistence.png
+  fileSize: 21794435
+  explicit: 'clean'
+
 - filename: xvzf.persistence.clint.mp3
   md5: 5717f9355cf42e6e964d69f9fe907b9a
   title: Clint Hardwood
