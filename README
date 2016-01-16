@@ -1,6 +1,9 @@
 To build the podcast:
-1) Put MP3 files at xvzf.io:/var/www/xvzf.io/shared/mp3
-2) edit data/talks.yml
+1) Use mkpodcast to generate the yaml for the podcast:
+
+    $ ./mkpodcast Dessy_mixdown.mp3 xvzf.persistence.dessy.mp3
+
+2) Add the output to the top of data/talks.yml
 3) git commit; git push
 4) bundle exec cap deploy
 

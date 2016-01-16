@@ -1,0 +1,111 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import with_statement
+
+import re
+import os
+import sys
+import glob
+import hashlib
+import logging
+from os import path
+from datetime import date
+
+sys.path.extend(glob.glob(path.join(path.dirname(__file__), "mkpodcast-libs/*")))
+
+import requests
+from mutagen import File
+
+log = logging.getLogger()
+
+
+class obj(object):
+    def __init__(self, attrs):
+        self.__dict__.update(attrs)
+
+def seconds2duration(seconds):
+    return "%d:%02d" %(seconds / 60, seconds % 60)
+
+def mp3_attr(mp3, key, attr="text"):
+    if key not in mp3:
+        return ""
+    val = mp3[key]
+    val = getattr(val, attr)
+    if isinstance(val, list) and len(val) > 0:
+        val = val[0]
+    return val or ""
+
+def check_url(url):
+    res = requests.get(url)
+    if res.status_code > 299:
+        print "ERROR %s checking that URL is valid: %s" %(
+            res.status_code, url,
+        )
+        return 1
+    print "URL looks good: HTTP %s %s" %(res.status_code, url)
+
+def main():
+    logging.basicConfig()
+    if len(sys.argv) != 3:
+        print "Usage: %s MP3_FILE TARGET_NAME" %(sys.argv[0], )
+        print "Example: %s Dessy_mixdown.mp3 xvzf.persistence.dessy.mp3" %(sys.argv[0], )
+        return 1
+
+    mp3_file, target_name = sys.argv[1:]
+
+    mp3 = File(mp3_file)
+    #{u'APIC:': APIC(encoding=0, mime=u'image/png', type=0, desc=u'', data=...'), 'TDRC': TDRC(encoding=0, text=[u'2014']), 'TIT2': TIT2(encoding=0, text=[u'Hoss Gifford on Feb 27th']), u"COMM::'eng'": COMM(encoding=0, lang='eng', desc=u'', text=[u'These are the comments ']), 'TRCK': TRCK(encoding=0, text=[u'1']), 'TPE1': TPE1(encoding=0, text=[u'xvzf']), 'TALB': TALB(encoding=0, text=[u'nontrivial']), 'TCOM': TCOM(encoding=0, text=[u'Hoss Gifford'])}
+    md5 = hashlib.md5()
+    with open(mp3_file) as f:
+        for hunk in iter(lambda: f.read(4096), ""):
+            md5.update(hunk)
+    image_url = re.sub("\.[a-zA-Z]+\.mp3", ".png", target_name)
+
+    if check_url("http://src.xvzf.io/img/%s" %(image_url, )):
+        return 1
+
+    remote_path = "/var/www/xvzf.io/shared/mp3/%s" %(target_name, )
+    res = os.system("scp '%s' 'xvzf.io:%s'" %(
+        mp3_file.replace("'", "\\'"),
+        remote_path,
+    ))
+    if res != 0:
+        print "ERROR: scp failed with status", res
+        return res
+
+    res = os.system("ssh xvzf.io 'chmod +r %s'" %(remote_path, ))
+    if res != 0:
+        print "ERROR: ssh failed to chmod file:", res
+        return res
+
+    print "File copied to:", remote_path
+
+    if check_url("http://src.xvzf.io/mp3/%s" %(target_name, )):
+        return 1
+
+    print u"""
+
+Put this at the top of data/talks.yaml:
+----- snip ------
+
+- filename: {target_name}
+  md5: {md5_hex}
+  title: !! TODO - ADD A TITLE - TODO !!
+  pubDate: "{pubDate}"
+  duration: "{duration}"
+  image_url: {image_url}
+  fileSize: {size}
+  explicit: !! TODO - EITHER 'clean' OR 'yes' - TODO !!
+
+----- snip ------
+""".format(**{
+    "target_name": target_name,
+    "md5_hex": md5.hexdigest(),
+    "pubDate": date.today().isoformat(),
+    "duration": seconds2duration(mp3.info.length),
+    "image_url": image_url,
+    "size": os.path.getsize(mp3_file),
+
+})
+
+sys.exit(main())
