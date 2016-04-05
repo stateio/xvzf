@@ -147,66 +147,139 @@ and (max-width : 568px) {
     padding-right: 20px;
   }
 
+#resolution {
+  @media only screen 
+  and (min-width : 320px) 
+  and (max-width : 568px) {
+    background-image: url("/img/resolution.phone.jpg");
+  }
+
+  @media (min-width: 569px) and (max-width:767px) {
+    background-image: url("/img/resolution.phone.jpg");
+  }
+
+  @media(min-width:768px){
+    background-image: url("/img/resolution.jpg");
+  }
+}
+
+#escape {
+  @media only screen 
+  and (min-width : 320px) 
+  and (max-width : 568px) {
+    background-image: url("/img/escape.phone.jpg");
+  }
+
+  @media (min-width: 569px) and (max-width:767px) {
+    background-image: url("/img/escape.phone.jpg");
+  }
+
+  @media(min-width:768px){
+    background-image: url("/img/escape.jpg");
+    header h1 {
+      font-size: 110px;
+    }
+  }
+}
+
+#closure {
+  @media only screen 
+  and (min-width : 320px) 
+  and (max-width : 568px) {
+    background-image: url("/img/closure.phone.jpg");
+  }
+
+  @media (min-width: 569px) and (max-width:767px) {
+    background-image: url("/img/closure.phone.jpg");
+  }
+
+  @media(min-width:768px){
+    background-image: url("/img/closure.jpg");
+    header h1 {
+      font-size: 110px;
+    }
+  }
+}
+
+#exceptions {
+  @media only screen 
+  and (min-width : 320px) 
+  and (max-width : 568px) {
+    background-image: url("/img/exception.phone.jpg");
+  }
+
+  @media (min-width: 569px) and (max-width:767px) {
+    background-image: url("/img/exception.phone.jpg");
+  }
+
+  @media(min-width:768px){
+    background-image: url("/img/exception.jpg");
+  }
+}
+
+#persistence {
+  @media only screen 
+  and (min-width : 320px) 
+  and (max-width : 568px) {
+    background-image: url("/img/persistence.phone.jpg");
+  }
+
+  @media (min-width: 569px) and (max-width:767px) {
+    background-image: url("/img/persistence.phone.jpg");
+  }
+
+  @media(min-width:768px){
+    background-image: url("/img/persistence.jpg");
+  }
+}
+
+#nontrivial {
+  @media only screen 
+  and (min-width : 320px) 
+  and (max-width : 568px) {
+    background-image: url("/img/nontrivial.phone.jpg");
+  }
+
+  @media (min-width: 569px) and (max-width:767px) {
+    background-image: url("/img/nontrivial.phone.jpg");
+  }
+
+  @media(min-width:768px){
+    background-image: url("/img/nontrivial.jpg");
+  }
+}
+
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 568px) { 
+  .event header h1 {
+    font-size: 55px;
+  }
+
+  .event header h3 {
+    font-size: 20px;
+  }
+
+  .event header h2 {
+    font-size: 34px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .event footer h2 {
     font-size: 22px;
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  #resolution {
-    background-image: url("/img/resolution.phone.jpg");
-  }
 
 
-  #escape {
-    background-image: url("/img/escape.phone.jpg");
-  }
-
-  #closure {
-    background-image: url("/img/closure.phone.jpg");
-  }
-
-  #exceptions.event {
-    background-image: url("/img/exception.phone.jpg");
-  }
-
-
-  #persistence { 
-    background-image: url("/img/pbg.phone.jpg")
-  }
-
-  #nontrivial {
-    background-image: url("/img/cylinder2.phone.jpg");
-  }
 }
 
 @media (min-width: 569px) and (max-width:767px) {
   .event header h1 {
     font-size: 90px;
-  }
-
-  #resolution {
-    background-image: url("/img/resolution.phone.jpg");
-  }
-
-  #escape {
-    background-image: url("/img/escape.phone.jpg");
-  }
-
-  #closure {
-    background-image: url("/img/closure.phone.jpg");
-  }
-
-  #exceptions {
-    background-image: url("/img/exception.phone.jpg");
-  }
-
-  #persistence {
-    background-image: url("/img/pbg.phone.jpg");
-  }
-
-  #nontrivial {
-    background-image: url("/img/cylinder2.phone.jpg");
   }
 
 }
@@ -224,39 +297,7 @@ and (max-width : 568px) {
       font-size: 50px;
     }
   }
-
-  #resolution {
-    background-image: url("/img/resolution.jpg");
-  }
-
-
-  #escape {
-    background-image: url("/img/escape.jpg");
-     header h1 {
-      font-size: 110px;
-    }
-
-  }
-
-  #closure {
-    background-image: url("/img/closure.jpg");
-    header h1 {
-      font-size: 110px;
-    }
-  }
-
-  #exceptions {
-    background-image: url("/img/exception.jpg");
-  }
-
-  #persistence {
-    background-image: url("/img/pbg.jpg");
-  }
-
-  #nontrivial {
-    background-image: url("/img/cylinder2.jpg");
-  }
-
+  
 }
 
 
