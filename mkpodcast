@@ -6,6 +6,7 @@ import re
 import os
 import sys
 import glob
+import shutil
 import hashlib
 import logging
 from os import path
@@ -47,8 +48,13 @@ def check_url(url):
 def main():
     logging.basicConfig()
     if len(sys.argv) != 3:
+        audio_dir = os.path.expanduser("~/Google Drive/xvzf/xvzf audio/")
         print "Usage: %s MP3_FILE TARGET_NAME" %(sys.argv[0], )
-        print "Example: %s Dessy_mixdown.mp3 xvzf.persistence.dessy.mp3" %(sys.argv[0], )
+        print "Example: %s '%s' xvzf.persistence.dessy.mp3" %(sys.argv[0], audio_dir)
+        available_audio = glob.glob(audio_dir + "*.mp3")
+        if available_audio:
+            print "Available audio files:"
+            print "    " + "\n    ".join(available_audio)
         return 1
 
     mp3_file, target_name = sys.argv[1:]
@@ -82,6 +88,15 @@ def main():
 
     if check_url("http://src.xvzf.io/mp3/%s" %(target_name, )):
         return 1
+
+    published_dir = os.path.join(os.path.dirname(mp3_file), "published/")
+    if os.path.exists(published_dir):
+        shutil.move(mp3_file, published_dir)
+    else:
+        print "!!! WARNING !!!"
+        print published_dir, "DOES NOT EXIST"
+        print "Manually move the MP3 into the 'published/' directory."
+        raw_input("Press enter to continue...")
 
     print u"""
 
