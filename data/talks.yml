@@ -1,7 +1,13 @@
 # add new ones to the top because why not
-# md5: md5sum filename
-# size: du -b filename
-#
+
+- filename: xvzf.persistence.dan.mp3
+  md5: 07d55aa40b88400065d924bd02f42e8f
+  title: Dan Friedman
+  pubDate: "2016-04-16"
+  duration: "9:34"
+  image_url: xvzf.persistence.png
+  fileSize: 13818273
+  explicit: 'clean',
 
 - filename: xvzf.persistence.dessy.mp3
   md5: ee8ddf48faf975acdd6fa246da614f6e
