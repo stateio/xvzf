@@ -51,6 +51,8 @@ def main():
         audio_dir = os.path.expanduser("~/Google Drive/xvzf/xvzf audio/")
         print "Usage: %s MP3_FILE TARGET_NAME" %(sys.argv[0], )
         print "Example: %s '%s' xvzf.persistence.dessy.mp3" %(sys.argv[0], audio_dir)
+        print
+        print "Speaker spreadsheet: https://docs.google.com/spreadsheets/d/1VJpqRNu5ixO6kmiCeqe5SxrA1kcO5RwgNdi2Xf9lz4o/edit#gid=0"
         available_audio = glob.glob(audio_dir + "*.mp3")
         if available_audio:
             print "Available audio files:"
@@ -89,6 +91,8 @@ def main():
     if check_url("http://src.xvzf.io/mp3/%s" %(target_name, )):
         return 1
 
+    mp3_file_size = os.path.getsize(mp3_file)
+
     published_dir = os.path.join(os.path.dirname(mp3_file), "published/")
     if os.path.exists(published_dir):
         shutil.move(mp3_file, published_dir)
@@ -119,7 +123,7 @@ Put this at the top of data/talks.yaml:
     "pubDate": date.today().isoformat(),
     "duration": seconds2duration(mp3.info.length),
     "image_url": image_url,
-    "size": os.path.getsize(mp3_file),
+    "size": mp3_file_size,
 
 })
 
