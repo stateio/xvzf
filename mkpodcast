@@ -16,6 +16,7 @@ sys.path.extend(glob.glob(path.join(path.dirname(__file__), "mkpodcast-libs/*"))
 
 import requests
 from mutagen import File
+from mutagen.id3 import APIC, error as mp3_error
 
 log = logging.getLogger()
 
@@ -61,16 +62,39 @@ def main():
 
     mp3_file, target_name = sys.argv[1:]
 
+    image_name = re.sub("\.[a-zA-Z]+\.mp3", ".png", target_name)
+
+    img_path = os.path.join(os.path.dirname(__file__), "source/podcast/img/", image_name)
+    if not os.path.exists(img_path):
+        print "ERROR: %s does not exist" %(img_path, )
+        return 1
+
+    if check_url("http://src.xvzf.io/img/%s" %(image_name, )):
+        return 1
+
+    # See: http://stackoverflow.com/questions/409949/how-do-you-embed-album-art-into-an-mp3-using-python
     mp3 = File(mp3_file)
     #{u'APIC:': APIC(encoding=0, mime=u'image/png', type=0, desc=u'', data=...'), 'TDRC': TDRC(encoding=0, text=[u'2014']), 'TIT2': TIT2(encoding=0, text=[u'Hoss Gifford on Feb 27th']), u"COMM::'eng'": COMM(encoding=0, lang='eng', desc=u'', text=[u'These are the comments ']), 'TRCK': TRCK(encoding=0, text=[u'1']), 'TPE1': TPE1(encoding=0, text=[u'xvzf']), 'TALB': TALB(encoding=0, text=[u'nontrivial']), 'TCOM': TCOM(encoding=0, text=[u'Hoss Gifford'])}
+    try:
+        mp3.add_tags()
+    except mp3_error:
+        # raised if the mp3 already has IDv3 tags
+        pass
+    mp3.tags.add(
+        APIC(
+            encoding=3, # 3 is for utf-8
+            mime='image/png', # image/jpeg or image/png
+            type=0, # 0 is for the 'other', which seems to be the one iTunes uses
+            desc='',
+            data=open(img_path).read()
+        )
+    )
+    mp3.save()
+
     md5 = hashlib.md5()
     with open(mp3_file) as f:
         for hunk in iter(lambda: f.read(4096), ""):
             md5.update(hunk)
-    image_url = re.sub("\.[a-zA-Z]+\.mp3", ".png", target_name)
-
-    if check_url("http://src.xvzf.io/img/%s" %(image_url, )):
-        return 1
 
     remote_path = "/var/www/xvzf.io/shared/mp3/%s" %(target_name, )
     res = os.system("scp '%s' 'xvzf.io:%s'" %(
@@ -110,6 +134,7 @@ Put this at the top of data/talks.yaml:
 
 - filename: {target_name}
   md5: {md5_hex}
+  guid: {md5_hex}
   title: !! TODO - ADD A TITLE - TODO !!
   pubDate: "{pubDate}"
   duration: "{duration}"
