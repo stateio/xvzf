@@ -127,6 +127,12 @@ def main():
         print "Manually move the MP3 into the 'published/' directory."
         raw_input("Press enter to continue...")
 
+    image_url = "xvzf.%s.png" %(target_name.split(".")[-3], )
+    image_path = "./source/podcast/img/%s" %(image_url, )
+    if not os.path.exists(image_path):
+        print "ERROR: image does not exist: %s" %(image_path, )
+        sys.exit(1)
+
     print u"""
 
 Put this at the top of data/talks.yaml:
