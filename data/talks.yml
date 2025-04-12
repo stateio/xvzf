@@ -1,10 +1,30 @@
 # add new ones to the top because why not
-# md5: md5sum filename
-# size: du -b filename
-#
+# Note: the guid and md5 are different on some because we didn't realize until
+# later that the images needed to be embedded in the MP3s.
+
+- filename: xvzf.nontrivial.tom.mp3
+  md5: d2baa702a406b6795d4e387e0e6a6892
+  guid: d2baa702a406b6795d4e387e0e6a6892
+  title: "Tom Hobson"
+  pubDate: "2016-12-08"
+  duration: "21:15"
+  image_url: xvzf.nontrivial.png
+  fileSize: 20855575
+  explicit: 'yes'
+
+- filename: xvzf.persistence.dan.mp3
+  md5: acea4a97920244c0513f46b230e2016e
+  guid: acea4a97920244c0513f46b230e2016e
+  title: Dan Friedman
+  pubDate: "2016-04-16"
+  duration: "9:34"
+  image_url: xvzf.persistence.png
+  fileSize: 13818273
+  explicit: 'clean'
 
 - filename: xvzf.persistence.dessy.mp3
-  md5: ee8ddf48faf975acdd6fa246da614f6e
+  md5: 65eb0aeccaa761769e082db229ae4dd7
+  guid: ee8ddf48faf975acdd6fa246da614f6e
   title: Dessy Daskalov
   pubDate: "2016-01-15"
   duration: "15:07"
@@ -13,7 +33,8 @@
   explicit: 'clean'
 
 - filename: xvzf.persistence.clint.mp3
-  md5: 5717f9355cf42e6e964d69f9fe907b9a
+  md5: 150e14dbc8131843172b93ed24fb40ed
+  guid: 5717f9355cf42e6e964d69f9fe907b9a
   title: Clint Hardwood
   pubDate: "2015-03-12"
   duration: "10:04"
@@ -22,7 +43,8 @@
   explicit: 'clean'
 
 - filename: xvzf.nontrivial.mustefa.mp3
-  md5: b1c331e67b4014b5a9204daac98cf61d
+  md5: 8dee87ebfde2dbec21484817c82b4fcd
+  guid: b1c331e67b4014b5a9204daac98cf61d
   title: Mustefa Jo'shen
   pubDate: "2015-03-06"
   duration: "03:35"
@@ -31,7 +53,8 @@
   explicit: 'clean'
 
 - filename: xvzf.nontrivial.andrew.mp3
-  md5: 9118a917dfe1c485dc608aa755d2c011
+  md5: 6baaa6c696e37aeb0299eaa4a48aa882
+  guid: 9118a917dfe1c485dc608aa755d2c011
   title: Andrew Eberbach
   pubDate: "2014-09-02"
   duration: "16:06"
@@ -40,7 +63,8 @@
   explicit: 'clean'
 
 - filename: xvzf.nontrivial.cecily.mp3
-  md5: d21aded29de6c532c462b707d5a016b7
+  md5: 228c9e1f52c0e9dad228b9b9072a8b95
+  guid: d21aded29de6c532c462b707d5a016b7
   title: Cecily Carver
   pubDate: "2014-08-08"
   duration: "8:59"
@@ -49,11 +73,11 @@
   explicit: 'clean'
 
 - filename: xvzf.nontrivial.hoss.mp3
-  md5: 47e9b32535f059beef7332747c52a7f0
-  "title": "Hoss Gifford"
-  "pubDate": "2014-08-01"
-  "duration": "16:21"
-  "summary": 
-  "image_url": xvzf.nontrivial.png
-  "fileSize": '15039737'
+  md5: ae27bbe84048377773f155b5118e7955
+  guid: 47e9b32535f059beef7332747c52a7f0
+  title: "Hoss Gifford"
+  pubDate: "2014-08-01"
+  duration: "16:21"
+  image_url: xvzf.nontrivial.png
+  fileSize: 15039737
   explicit: 'yes'

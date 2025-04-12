@@ -34,7 +34,7 @@
 
     <% data.talks.each do |talk| %>
       <item>
-        <guid><%=talk.md5 %></guid>
+        <guid isPermaLink="false"><%=talk.guid %></guid>
         <title><%=h talk.title%></title>
         <pubDate><%= format_date(talk.pubDate) %></pubDate>
         <link><%= podcast_path(talk.filename, talk.md5)%></link>
@@ -45,7 +45,7 @@
         <itunes:subtitle><%=h talk.summary%></itunes:subtitle>
         <description><%=h talk.summary%></description>
         <% if talk.image_url %>
-        <itunes:image href="<%= podcast_image_path(talk.image_url) %>"/>
+        <itunes:image href="<%= podcast_image_path(talk.image_url) %>" />
         <% end %>
         <media:content url="<%= podcast_path(talk.filename, talk.md5) %>" fileSize="<%= talk.fileSize %>" type="audio/mpeg"/>
         <enclosure url="<%= podcast_path(talk.filename, talk.md5) %>" length="<%= talk.fileSize %>" type="audio/mpeg"/>

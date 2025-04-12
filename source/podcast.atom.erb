@@ -34,7 +34,7 @@
 
     <% data.talks.each do |talk| %>
       <item>
-        <guid><%=talk.md5 %></guid>
+        <guid><%=talk.guid %></guid>
         <title><%=h talk.title%></title>
         <pubDate><%= format_date(talk.pubDate) %></pubDate>
         <link><%= podcast_path(talk.filename, talk.md5)%></link>

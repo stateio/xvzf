@@ -6,6 +6,7 @@ import re
 import os
 import sys
 import glob
+import shutil
 import hashlib
 import logging
 from os import path
@@ -15,6 +16,7 @@ sys.path.extend(glob.glob(path.join(path.dirname(__file__), "mkpodcast-libs/*"))
 
 import requests
 from mutagen import File
+from mutagen.id3 import APIC, error as mp3_error
 
 log = logging.getLogger()
 
@@ -47,22 +49,52 @@ def check_url(url):
 def main():
     logging.basicConfig()
     if len(sys.argv) != 3:
+        audio_dir = os.path.expanduser("~/Google Drive/xvzf/xvzf audio/")
         print "Usage: %s MP3_FILE TARGET_NAME" %(sys.argv[0], )
-        print "Example: %s Dessy_mixdown.mp3 xvzf.persistence.dessy.mp3" %(sys.argv[0], )
+        print "Example: %s '%s' xvzf.persistence.dessy.mp3" %(sys.argv[0], audio_dir)
+        print
+        print "Speaker spreadsheet: https://docs.google.com/spreadsheets/d/1VJpqRNu5ixO6kmiCeqe5SxrA1kcO5RwgNdi2Xf9lz4o/edit#gid=0"
+        available_audio = glob.glob(audio_dir + "*.mp3")
+        if available_audio:
+            print "Available audio files:"
+            print "    " + "\n    ".join(available_audio)
         return 1
 
     mp3_file, target_name = sys.argv[1:]
 
+    image_name = re.sub("\.[a-zA-Z]+\.mp3", ".png", target_name)
+
+    img_path = os.path.join(os.path.dirname(__file__), "source/podcast/img/", image_name)
+    if not os.path.exists(img_path):
+        print "ERROR: %s does not exist" %(img_path, )
+        return 1
+
+    if check_url("http://src.xvzf.io/img/%s" %(image_name, )):
+        return 1
+
+    # See: http://stackoverflow.com/questions/409949/how-do-you-embed-album-art-into-an-mp3-using-python
     mp3 = File(mp3_file)
     #{u'APIC:': APIC(encoding=0, mime=u'image/png', type=0, desc=u'', data=...'), 'TDRC': TDRC(encoding=0, text=[u'2014']), 'TIT2': TIT2(encoding=0, text=[u'Hoss Gifford on Feb 27th']), u"COMM::'eng'": COMM(encoding=0, lang='eng', desc=u'', text=[u'These are the comments ']), 'TRCK': TRCK(encoding=0, text=[u'1']), 'TPE1': TPE1(encoding=0, text=[u'xvzf']), 'TALB': TALB(encoding=0, text=[u'nontrivial']), 'TCOM': TCOM(encoding=0, text=[u'Hoss Gifford'])}
+    try:
+        mp3.add_tags()
+    except mp3_error:
+        # raised if the mp3 already has IDv3 tags
+        pass
+    mp3.tags.add(
+        APIC(
+            encoding=3, # 3 is for utf-8
+            mime='image/png', # image/jpeg or image/png
+            type=0, # 0 is for the 'other', which seems to be the one iTunes uses
+            desc='',
+            data=open(img_path).read()
+        )
+    )
+    mp3.save()
+
     md5 = hashlib.md5()
     with open(mp3_file) as f:
         for hunk in iter(lambda: f.read(4096), ""):
             md5.update(hunk)
-    image_url = re.sub("\.[a-zA-Z]+\.mp3", ".png", target_name)
-
-    if check_url("http://src.xvzf.io/img/%s" %(image_url, )):
-        return 1
 
     remote_path = "/var/www/xvzf.io/shared/mp3/%s" %(target_name, )
     res = os.system("scp '%s' 'xvzf.io:%s'" %(
@@ -83,6 +115,24 @@ def main():
     if check_url("http://src.xvzf.io/mp3/%s" %(target_name, )):
         return 1
 
+    mp3_file_size = os.path.getsize(mp3_file)
+
+    published_dir = os.path.join(os.path.dirname(mp3_file), "published/")
+    if os.path.exists(published_dir):
+        shutil.move(mp3_file, published_dir)
+        print "%s moved to %s" %(os.path.basename(mp3_file), published_dir)
+    else:
+        print "!!! WARNING !!!"
+        print published_dir, "DOES NOT EXIST"
+        print "Manually move the MP3 into the 'published/' directory."
+        raw_input("Press enter to continue...")
+
+    image_url = "xvzf.%s.png" %(target_name.split(".")[-3], )
+    image_path = "./source/podcast/img/%s" %(image_url, )
+    if not os.path.exists(image_path):
+        print "ERROR: image does not exist: %s" %(image_path, )
+        sys.exit(1)
+
     print u"""
 
 Put this at the top of data/talks.yaml:
@@ -90,6 +140,7 @@ Put this at the top of data/talks.yaml:
 
 - filename: {target_name}
   md5: {md5_hex}
+  guid: {md5_hex}
   title: !! TODO - ADD A TITLE - TODO !!
   pubDate: "{pubDate}"
   duration: "{duration}"
@@ -104,7 +155,7 @@ Put this at the top of data/talks.yaml:
     "pubDate": date.today().isoformat(),
     "duration": seconds2duration(mp3.info.length),
     "image_url": image_url,
-    "size": os.path.getsize(mp3_file),
+    "size": mp3_file_size,
 
 })
 
