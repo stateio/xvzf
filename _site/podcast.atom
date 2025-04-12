@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+  <channel>
+    <title>xvzf: true stories from toronto tech workers</title>
+    <link>http://xvzf.io</link>
+    <language>en-us</language>
+    <itunes:author>xvzf</itunes:author>
+    <itunes:subtitle>xvzf is a regularly occuring night for Toronto tech workers to come together and share true, personal stories. Find out more at xvzf.io.
+</itunes:subtitle>
+    <itunes:summary>xvzf is a regularly occuring night for Toronto tech workers to come together and share true, personal stories. Find out more at xvzf.io.
+</itunes:summary>
+    <description>xvzf is a regularly occuring night for Toronto tech workers to come together and share true, personal stories. Find out more at xvzf.io.
+</description>
+    <itunes:owner>
+      <itunes:name>David Wolever</itunes:name>
+      <itunes:email>david@wolever.net</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>yes</itunes:explicit>
+    <media:rating>adult</media:rating>
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://xvzf.io/podcast.atom"/>
+    
+      <media:thumbnail url="http://src.xvzf.io/img/podcast.jpg"/>
+      <itunes:image href="http://src.xvzf.io/img/podcast.jpg"/>
+    
+
+    
+      <itunes:category text="Technology"/>
+      <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology</media:category>
+    
+      <itunes:category text="Society &amp; Culture"/>
+      <media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Society &amp; Culture</media:category>
+    
+
+    
+      <contributor>
+        <name>Phillip Mendonça-Vieira</name>
+        <email>phillmv@okayfail.com</email>
+      </contributor>
+    
+      <contributor>
+        <name>David Wolever</name>
+        <email>david@wolever.net</email>
+      </contributor>
+    
+
+    
+      <item>
+        <guid>d2baa702a406b6795d4e387e0e6a6892</guid>
+        <title>Tom Hobson</title>
+        <pubDate>Thu, 08 Dec 2016 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.nontrivial.tom.mp3?md5=d2baa702a406b6795d4e387e0e6a6892</link>
+        <itunes:duration>21:15</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>yes</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.nontrivial.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.tom.mp3?md5=d2baa702a406b6795d4e387e0e6a6892" fileSize="20855575" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.tom.mp3?md5=d2baa702a406b6795d4e387e0e6a6892" length="20855575" type="audio/mpeg"/>
+      </item>
+    
+      <item>
+        <guid>acea4a97920244c0513f46b230e2016e</guid>
+        <title>Dan Friedman</title>
+        <pubDate>Sat, 16 Apr 2016 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.persistence.dan.mp3?md5=acea4a97920244c0513f46b230e2016e</link>
+        <itunes:duration>9:34</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.persistence.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.persistence.dan.mp3?md5=acea4a97920244c0513f46b230e2016e" fileSize="13818273" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.persistence.dan.mp3?md5=acea4a97920244c0513f46b230e2016e" length="13818273" type="audio/mpeg"/>
+      </item>
+    
+      <item>
+        <guid>ee8ddf48faf975acdd6fa246da614f6e</guid>
+        <title>Dessy Daskalov</title>
+        <pubDate>Fri, 15 Jan 2016 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.persistence.dessy.mp3?md5=65eb0aeccaa761769e082db229ae4dd7</link>
+        <itunes:duration>15:07</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.persistence.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.persistence.dessy.mp3?md5=65eb0aeccaa761769e082db229ae4dd7" fileSize="21794435" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.persistence.dessy.mp3?md5=65eb0aeccaa761769e082db229ae4dd7" length="21794435" type="audio/mpeg"/>
+      </item>
+    
+      <item>
+        <guid>5717f9355cf42e6e964d69f9fe907b9a</guid>
+        <title>Clint Hardwood</title>
+        <pubDate>Thu, 12 Mar 2015 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.persistence.clint.mp3?md5=150e14dbc8131843172b93ed24fb40ed</link>
+        <itunes:duration>10:04</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.persistence.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.persistence.clint.mp3?md5=150e14dbc8131843172b93ed24fb40ed" fileSize="14520041" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.persistence.clint.mp3?md5=150e14dbc8131843172b93ed24fb40ed" length="14520041" type="audio/mpeg"/>
+      </item>
+    
+      <item>
+        <guid>b1c331e67b4014b5a9204daac98cf61d</guid>
+        <title>Mustefa Jo&#x27;shen</title>
+        <pubDate>Fri, 06 Mar 2015 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.nontrivial.mustefa.mp3?md5=8dee87ebfde2dbec21484817c82b4fcd</link>
+        <itunes:duration>03:35</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.nontrivial.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.mustefa.mp3?md5=8dee87ebfde2dbec21484817c82b4fcd" fileSize="5182893" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.mustefa.mp3?md5=8dee87ebfde2dbec21484817c82b4fcd" length="5182893" type="audio/mpeg"/>
+      </item>
+    
+      <item>
+        <guid>9118a917dfe1c485dc608aa755d2c011</guid>
+        <title>Andrew Eberbach</title>
+        <pubDate>Tue, 02 Sep 2014 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.nontrivial.andrew.mp3?md5=6baaa6c696e37aeb0299eaa4a48aa882</link>
+        <itunes:duration>16:06</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.nontrivial.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.andrew.mp3?md5=6baaa6c696e37aeb0299eaa4a48aa882" fileSize="8979087" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.andrew.mp3?md5=6baaa6c696e37aeb0299eaa4a48aa882" length="8979087" type="audio/mpeg"/>
+      </item>
+    
+      <item>
+        <guid>d21aded29de6c532c462b707d5a016b7</guid>
+        <title>Cecily Carver</title>
+        <pubDate>Fri, 08 Aug 2014 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.nontrivial.cecily.mp3?md5=228c9e1f52c0e9dad228b9b9072a8b95</link>
+        <itunes:duration>8:59</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.nontrivial.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.cecily.mp3?md5=228c9e1f52c0e9dad228b9b9072a8b95" fileSize="8432722" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.cecily.mp3?md5=228c9e1f52c0e9dad228b9b9072a8b95" length="8432722" type="audio/mpeg"/>
+      </item>
+    
+      <item>
+        <guid>47e9b32535f059beef7332747c52a7f0</guid>
+        <title>Hoss Gifford</title>
+        <pubDate>Fri, 01 Aug 2014 00:00:00 GMT</pubDate>
+        <link>http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=ae27bbe84048377773f155b5118e7955</link>
+        <itunes:duration>16:21</itunes:duration>
+        <itunes:author>xvzf</itunes:author>
+        <itunes:explicit>yes</itunes:explicit>
+        <itunes:summary></itunes:summary>
+        <itunes:subtitle></itunes:subtitle>
+        <description></description>
+        
+        <itunes:image href="http://src.xvzf.io/img/xvzf.nontrivial.png"/>
+        
+        <media:content url="http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=ae27bbe84048377773f155b5118e7955" fileSize="15039737" type="audio/mpeg"/>
+        <enclosure url="http://src.xvzf.io/mp3/xvzf.nontrivial.hoss.mp3?md5=ae27bbe84048377773f155b5118e7955" length="15039737" type="audio/mpeg"/>
+      </item>
+    
+  </channel>
+</rss>

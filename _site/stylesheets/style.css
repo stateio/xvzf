@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  color: white;
+}
+
+input {
+  margin: 0 auto;
+}
+
+a, a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-shadow: none;
+}
+
+#logo {
+  font-family: monospace;
+}
+
+#nontrivial {
+  background-image: url("/img/cylinder2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+#nontrivial header {
+  text-align: center;
+  padding-top: 40px;
+  padding-top: 0px;
+  margin-top: 0;
+}
+
+.nontrivial h1, .nontrivial h3, .nontrivial h4 {
+  margin-top: 0;
+}
+
+
+#nontrivial header h1 {
+  font-size: 90px;
+  margin-bottom: 0px;
+}
+
+#nontrivial footer, #coc footer {
+  width: 100%;
+  bottom: 50px;
+  position: absolute;
+  text-align: center;
+}
+
+/* trololol */
+#theme {
+  background-image: url("/img/pbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+#theme header {
+  text-align: center;
+  padding-top: 40px;
+  padding-top: 0px;
+  margin-top: 0;
+}
+
+.theme h1, .theme h3, .theme h4 {
+  margin-top: 0;
+}
+
+
+#theme header h1 {
+  font-size: 90px;
+  margin-bottom: 0px;
+}
+
+#theme footer, #coc footer {
+  width: 100%;
+  bottom: 50px;
+  position: absolute;
+  text-align: center;
+}
+
+#theme footer {
+  bottom: 12%;
+}
+
+.theme #coc p {
+  font-size: 22px;
+}
+
+.theme #coc {
+  background-image: url("/img/pbg3.jpg");
+}
+
+#moreinfo #cta {
+  width: 100%;
+  bottom: 40px;
+  position: absolute;
+}
+
+#cta button {
+  margin-top: 10px;
+}
+
+#bg {
+  background-image: url("/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+#moreinfo {
+  background-image: url("/img/election.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.theme #moreinfo {
+  background-image: url("/img/pbg2.1.jpg");
+}
+
+.theme #moreinfo h3 {
+  z-index: 2;
+}
+
+.hl {
+  background-color: black;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#coc {
+  background-image: url("/img/camouflage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+#coc h1 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#coc p {
+  font-size: 16px;
+}
+
+.btn.rsvp {
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px;
+}
+
+#rsvp-footer .form-control, #cta .form-control {
+  background-color: transparent;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px;
+  color: white;
+}
+
+#rsvp-footer, #rsvp-header {
+  display: table;
+  margin: 0 auto;
+}
+
+#rsvp-header, #event-header, #moreinfo {
+  text-align: center;
+  padding-top: 40px;
+}
+
+
+#rsvp-header h1 {
+  font-weight: normal;
+}
+
+#rsvp-header h3 {
+  font-size: 40px;
+  font-weight: 200;
+}
+
+#rsvp-footer form #email, #cta form #email {
+  width: 20em;
+}
+
+
+#rsvp-footer ::-webkit-input-placeholder { /* WebKit browsers */
+  text-align: center;
+  color:    white;
+}
+:#rsvp-footer -moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  text-align: center;
+  color:    white;
+}
+:#rsvp-footer :-moz-placeholder { /* Mozilla Firefox 19+ */
+  text-align: center;
+  color:    white;
+}
+:#rsvp-footer -ms-input-placeholder { /* Internet Explorer 10+ */
+  text-align: center;
+  color:    white;
+}
+
+#cta ::-webkit-input-placeholder { /* WebKit browsers */
+  text-align: center;
+  color:    white;
+}
+:#cta -moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  text-align: center;
+  color:    white;
+}
+:#cta :-moz-placeholder { /* Mozilla Firefox 19+ */
+  text-align: center;
+  color:    white;
+}
+:#cta -ms-input-placeholder { /* Internet Explorer 10+ */
+  text-align: center;
+  color:    white;
+}
+

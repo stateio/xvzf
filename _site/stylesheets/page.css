@@ -1,0 +1,274 @@
+/* line 1, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+.logo {
+  font-family: 'Courier New'; }
+
+/* line 5, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+#hello h1 {
+  font-size: 60px; }
+
+/* line 9, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+body, html {
+  height: 100%;
+  font-size: 16px; }
+
+/* line 13, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+.btn.btn-dark {
+  color: white;
+  background-color: transparent; }
+
+/* line 18, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+.input-dark, .input-dark[disabled] {
+  background-color: transparent;
+  color: white; }
+
+/* line 23, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+.input-dark ::-webkit-input-placeholder, .input-dark -moz-placeholder, .input-dark -moz-placeholder, .input-dark -ms-input-placeholder {
+  text-align: center;
+  color: white; }
+
+@media (max-width: 767px) {
+  /* line 29, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #topbar {
+    display: none; } }
+/* line 34, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+#topbar .logo {
+  position: fixed;
+  right: 20px;
+  top: 0px;
+  z-index: 1;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white; }
+
+/* line 45, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+#hello {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  min-height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: block;
+  background-image: url("/img/election.pixel.jpg");
+  color: white; }
+
+/* line 61, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+.event {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-position: 50% 50%;
+  min-height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: block;
+  color: white;
+  margin: 0; }
+  /* line 77, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event header {
+    text-align: center;
+    padding-top: 40px;
+    padding-top: 0;
+    margin-top: 0; }
+  /* line 83, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event footer {
+    width: 100%;
+    bottom: 50px;
+    position: absolute;
+    text-align: center; }
+  /* line 90, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event h1, .event h3, .event h4 {
+    margin-top: 0px; }
+  /* line 94, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event h1 {
+    margin-bottom: 0px; }
+
+/* line 100, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+#coc {
+  background-image: url("/img/camouflage.jpg"); }
+  /* line 102, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #coc li {
+    margin-top: 10px; }
+
+/* line 107, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+#credits {
+  background-image: url("/img/stars2.gif"); }
+  /* line 109, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #credits h1 {
+    font-size: 30px;
+    padding-top: 20px; }
+  /* line 115, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #credits .thanks {
+    margin-top: 30px; }
+    /* line 117, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+    #credits .thanks li {
+      margin-top: 10px; }
+  /* line 121, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #credits footer h3 {
+    font-weight: normal; }
+  /* line 125, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #credits a, #credits a:hover {
+    color: white;
+    text-decoration: underline; }
+
+/* line 131, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+p.conditions {
+  padding-top: 20px; }
+  /* line 133, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  p.conditions a {
+    color: white;
+    text-decoration: underline; }
+
+/* line 138, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+.btn.rsvp {
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px; }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 148, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #artifact {
+    background-image: url("/img/artifact.phone.png"); } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 148, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #artifact {
+    background-image: url("/img/artifact.phone.png"); } }
+@media (min-width: 768px) {
+  /* line 148, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #artifact {
+    background-image: url("/img/artifact.png"); } }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 164, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #resolution {
+    background-image: url("/img/resolution.phone.jpg"); } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 164, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #resolution {
+    background-image: url("/img/resolution.phone.jpg"); } }
+@media (min-width: 768px) {
+  /* line 164, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #resolution {
+    background-image: url("/img/resolution.jpg"); } }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 180, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #escape {
+    background-image: url("/img/escape.phone.jpg"); } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 180, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #escape {
+    background-image: url("/img/escape.phone.jpg"); } }
+@media (min-width: 768px) {
+  /* line 180, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #escape {
+    background-image: url("/img/escape.jpg"); }
+    /* line 193, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+    #escape header h1 {
+      font-size: 110px; } }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 199, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #closure {
+    background-image: url("/img/closure.phone.jpg"); } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 199, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #closure {
+    background-image: url("/img/closure.phone.jpg"); } }
+@media (min-width: 768px) {
+  /* line 199, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #closure {
+    background-image: url("/img/closure.jpg"); }
+    /* line 212, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+    #closure header h1 {
+      font-size: 110px; } }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 218, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #exceptions {
+    background-image: url("/img/exception.phone.jpg"); } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 218, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #exceptions {
+    background-image: url("/img/exception.phone.jpg"); } }
+@media (min-width: 768px) {
+  /* line 218, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #exceptions {
+    background-image: url("/img/exception.jpg"); } }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 234, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #persistence {
+    background-image: url("/img/persistence.phone.jpg"); } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 234, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #persistence {
+    background-image: url("/img/persistence.phone.jpg"); } }
+@media (min-width: 768px) {
+  /* line 234, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #persistence {
+    background-image: url("/img/persistence.jpg"); } }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 250, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #nontrivial {
+    background-image: url("/img/nontrivial.phone.jpg"); } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 250, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #nontrivial {
+    background-image: url("/img/nontrivial.phone.jpg"); } }
+@media (min-width: 768px) {
+  /* line 250, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #nontrivial {
+    background-image: url("/img/nontrivial.jpg"); } }
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  /* line 270, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event header h1 {
+    font-size: 55px; }
+
+  /* line 274, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event header h3 {
+    font-size: 20px; }
+
+  /* line 278, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event header h2 {
+    font-size: 34px;
+    padding-left: 20px;
+    padding-right: 20px; }
+
+  /* line 284, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event footer h2 {
+    font-size: 22px;
+    padding-left: 10px;
+    padding-right: 10px; } }
+@media (min-width: 569px) and (max-width: 767px) {
+  /* line 295, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event header h1 {
+    font-size: 90px; } }
+@media (min-width: 768px) {
+  /* line 302, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  .event header h1 {
+    font-size: 90px; }
+
+  /* line 307, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #coc li {
+    font-size: 18px; }
+  /* line 310, /var/www/xvzf.io/releases/20161209024543/source/stylesheets/page.css.scss */
+  #coc h2 {
+    font-size: 50px; } }
+/* #nontrivial header { */
+/*   text-align: center; */
+/*   padding-top: 40px; */
+/*   padding-top: 0px; */
+/*   margin-top: 0; */
+/* } */

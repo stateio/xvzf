@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>xvzf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/pers.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- <script src='https://cdn.firebase.com/v0/firebase.js'></script> -->
+
+
+  </head>
+  <body class="theme">
+
+    <div id="theme">
+      <header>
+        <h1>persistence</h1>
+        <h3>stories about endurance</h3>
+      </header>
+      <footer>
+        <h2>8pm, Thursday, May 29, 2014</h2>
+        <button id="moar" class="btn btn-default rsvp">say what?</button>
+      </footer>
+    </div>
+
+    <div id="moreinfo">
+      <header>
+        <h1 style="margin-bottom: 9px"><span class="hl">We're having an intimate gathering</span><br/><span class="">with some of our friends.</span></h1>
+        <h2><span class="hl">People telling true, personal stories, & drinks.</span></h3>
+        <h3><span class="">(There's more to life than Hacker News).</span></h3>
+      </header>
+
+      <div id="cta" class="container">
+        <h3><span class="">8pm (sharp!),</span></h3><h3><span class="hl">Thursday, May 29 at <a href="https://maps.google.ca/maps?q=Magpie+Taproom,+Dundas+Street+West,+Toronto,+ON&hl=en&sll=43.651557,-79.409214&sspn=0.009704,0.019376&oq=Magpie+Taproom,+Toronto&t=h&gl=ca&z=16&iwloc=A">the Magpie</a></span></h3>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <p><span class="">By attending this event, you agree<span><br/><span class="">to uphold our <a class="coc" href="#coc">code of conduct</a></span></p>
+            <button class="btn btn-default rsvp guestlist-event-255963" href="#">rsvp</button>
+            <br/>
+            <br/>
+            <p>All proceeds donated to the EFF, and the bartender.</p>
+            <!-- <p>Tickets aren't for sale yet. If you want us to let you know,</p> -->
+            <!-- <form role="form"> -->
+            <!--   <input type="email" class="form&#45;control" id="email" placeholder="(your email here)"> -->
+            <!--   <button type="submit" class="btn btn&#45;default rsvp">holla</button> -->
+            <!-- </form> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="coc">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h1>Code of Conduct</h1>
+            <br/>
+            <p>- We want to be inclusive; do not engage in homophobic, racist, transphobic, ableist, sexist, or otherwise exclusionary behavior. Don’t make exclusionary jokes. Don't be a jerk.</p>
+            <p>- Don’t harass people. Unconsented physical contact or sexual attention is harrassment. Dressing or acting in a certain way is not consent.</p>
+            <p>- Please be intentional in your actions, and humble in your mistakes.</p>
+            <p>- Come and talk to us for any and all reasons.</p>
+
+
+          </div>
+
+        </div>
+      </div>
+      <footer>
+        a project by <a><span id="logo">xvzf</span></a>
+        <br/><a href="http://twitter.com/wolever">@wolever</a> and <a href="http://twitter.com/phillmv">@phillmv</a>
+        <br/>
+        indispensable assistance provided by <br/><a href="http://taaviburns.ca/">Taavi Burns</a> and <a href="https://twitter.com/lsutula">Laura Sutula</a>
+      </footer>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="javascripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://guestlistapp.com/javascripts/guestlist-embed.js"></script>
+    <script>
+      // var myDataRef = new Firebase('https://xvzf.firebaseio.com/');
+
+      // $('form').submit(function(e) {
+      //   email = $(this).children("input").val();
+      //   if (email) {
+      //     myDataRef.child("nontrivial").push(email);
+      //     $(this).children("input").val("Sweet. We'll holler at you.");
+      //     $(this).children("input").css("text-align", "center");
+      //     $(this).children("input").prop('disabled', 'disabled');
+      //     $(this).children("button").prop('disabled', 'disabled');
+      //   }
+      //   return false;
+      // });
+
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-35220277-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      $("#moar").click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $("#moreinfo").offset().top
+        }, 800);
+      });
+
+      $("a.coc").click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $("#coc").offset().top
+        }, 800);
+      });
+
+
+
+    </script>
+
+  </body>
+</html>
